@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2018/03/30/hello-world/"/>
+      <url>/2018/03/30/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>开发组常见问题及解决办法</title>
+      <link href="/2017/11/29/DevelopmentGroup_QAS/"/>
+      <url>/2017/11/29/DevelopmentGroup_QAS/</url>
+      <content type="html"><![CDATA[<blockquote><p>开发组问题及解决办法<br>更新日期：2017-11-29</p></blockquote><h2 id="2017年11月汇总"><a href="#2017年11月汇总" class="headerlink" title="2017年11月汇总"></a>2017年11月汇总</h2><span class="label label-danger">Q</span> 电调上电自检通过，但无法转动？机型<code>MC61550</code><br><br><span class="label label-success">A</span> 电调焊接时焊渣掉落导致连锡，去除后电调正常工作<br><br><span class="label label-danger">Q</span> 安全开关解锁后电调嘀嘀急促报警？<code>MC61550</code><br><br><span class="label label-success">A</span> 电调油门未校准导致，校准成功后解决<br><br><span class="label label-danger">Q</span> 客户端与服务端IP冲突图像无法导通<br><br><span class="label label-success">A</span> 联系紫川技术人员将红外的原IP指向改为二段网络2.11同时也将服务端改成相同网段，在使用内网时外网将会无法访问<br><br><span class="label label-danger">Q</span> 强光影响下探测距离缩短距离降低<br><br><span class="label label-success">A</span> 登入地面站将雷达灵敏度适当降低可减少外面强光影响，但是有效距离会下降，可将避障距离调大避免飞机速度过快刹车倾角过大<br><br><br>## 2017年10月汇总<br><br><br><span class="label label-danger">Q</span> FOC电调V1版和V2版混用<br><br><span class="label label-success">A</span> <p>“FOC电调V1版为可调油门行程，V2版为不可调油门行程，两者不能混用，区别方式如下：</p><ol><li>电调打标不同，V2版电调有””V2””字样，如115KV电调标签，V1版为“KV115-28inch”，V2版为“KV115-28inch-V2”；</li><li>油门行程校准，V1版进入油门校准方式后，按下解锁开关，“嘀嘀”响两声结束，而V2版电调则会一直“嘀嘀嘀”持续常响；”</li></ol><span class="label label-danger">Q</span> FOC电调V1版油门校准失败<br><br><span class="label label-success">A</span> “FOC电调校准步骤：<br>1. 6个机臂接在飞机上，动力电池，将遥控器油门拉到最高，然后按下电源开关，此时飞机LED应显示红色常亮；然后关闭电源开关；<br>2. 保持遥控器油门最高不变，重新按下电源开关，此时飞机LED应显示红色常亮，蜂鸣器响，LED五颜六色登出现；<br>3. 在电源开关不断开的情况下，给USB调参口5V供电（充电宝或电脑USB口供电），然后关闭飞机电源开关；<br>4. 这一步最关键，在按下电源开关后 立刻按下解锁开关，要尽量快，否则会失败，要重新从步骤1开始；成功后电调会嘀嘀响两声；将遥控器油门拉到最低，会嘀的响一声，油门校准成功；<br>5. 重新上电后即可正常操作”<br><br><span class="label label-danger">Q</span> FOC电调电机停转或转动异常<br><br><span class="label label-success">A</span> <ol><li>拆除桨叶，机臂上电，电调是否发出提示音。若有提示音，通常电调都可正常工作，进入第二步；</li><li>检查电机是否破损，电机是否堵转，电机三相线两两测量是否导通，如检测无异常，可以排除电机故障，推断为电调原因；</li><li>若电机检测无异常电调上电无响声，通常为元器件破损或电源，需要更换电调，将不良品寄回原厂修理”</li></ol><p><span class="label label-danger">Q</span> “紫川红外改网口引脚接线无法和网口线路导通<br>“</p><p><span class="label label-success">A</span> 只能用网口水晶头连接，无法用焊接引脚方法导通</p><p><span class="label label-danger">Q</span> B80悬停机前机臂脚架抖动比较大</p><p><span class="label label-success">A</span> 尝试改变动力系统KV值和桨叶尺寸加强前机臂结构减少抖动频率，重新对脚架位置进行定义</p><p><span class="label label-danger">Q</span> 图传钻孔治具无法固定，每次打出的孔位互相之间有偏差</p><p><span class="label label-success">A</span> 制作新的图传钻孔治具，在侧翼加两个孔套在脚架螺丝上以固定。</p><p><span class="label label-danger">Q</span> 飞机在厂内测试时，脚架着地易划伤</p><p><span class="label label-success">A</span> 购买海绵套套在脚架横管上，防止划伤。</p><p><span class="label label-danger">Q</span> 出货配件中各种螺丝放在一起，杂乱，不易挑选</p><p><span class="label label-success">A</span> 规范化螺丝种类、数量，用小包装袋装好，并贴上标签。</p><p><span class="label label-danger">Q</span> 电机滴滴报警，无动力输出</p><p><span class="label label-success">A</span> 分线板电调插槽松动，电调信号线接触不良，更换分线板或者重新插牢。</p><p><span class="label label-danger">Q</span> 飞机飞行时突然不受控制，飞手无法取得控制权</p><p><span class="label label-success">A</span> 接收机SBUS线松动，造成接收信号断断续续，飞机失控</p><p><span class="label label-danger">Q</span> 飞机悬停时高度不稳，明显忽上忽下</p><p><span class="label label-success">A</span> 气压计故障，更换气压计或者更换飞控</p><p><span class="label label-danger">Q</span> 高度显示不正常，飞机悬停，地面站显示与实际高度差别大，但飞机飞行稳定</p><p><span class="label label-success">A</span> 地面站软件BUG，需更新解决</p><p><span class="label label-danger">Q</span> GPS信号时有时无，GPS模式下，GPS失控</p><p><span class="label label-success">A</span> 拆开gps外壳发现里面有个元器件脱落，坏件还没带回去，（跟换新的GPS后,工作正常）</p><p><span class="label label-danger">Q</span> 倾斜影像挂在飞机上通电后不做如何操作，LED显示屏拍照数会自动上升，也会自拍。</p><p><span class="label label-success">A</span> 将控制线更换成屏蔽线，屏蔽线地线要与快拆PCBA板和倾斜影像PCBA电源主控板接地。</p><p><span class="label label-danger">Q</span> 倾斜影像usb口拖落或接口无反应不能传输数据</p><p><span class="label label-success">A</span> 可先将手机用Wi-Fi连接相机，然后将照片导入到手机里，再从手机导出到电脑里。</p>]]></content>
+      
+      <categories>
+          
+          <category> QuestionsAndAnswers </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>技术支持常见问题及解决办法</title>
+      <link href="/2017/11/29/TechnologySupport_QAS/"/>
+      <url>/2017/11/29/TechnologySupport_QAS/</url>
+      <content type="html"><![CDATA[<blockquote><p>售后常见问题及解决办法<br>更新日期：2017-11-29</p></blockquote><h2 id="2017年11月汇总"><a href="#2017年11月汇总" class="headerlink" title="2017年11月汇总"></a>2017年11月汇总</h2><span class="label label-danger">Q</span> 飞机飞控解锁后，某个机臂发出“滴滴”报警声，且更换机臂接口后该机臂仍然报警，使用测试台测试时，机臂正常，拍查线路连接也正常？<br><br><span class="label label-success">A</span> <p>重新校准所有机臂油门行程。</p><span class="label label-danger">Q</span> 地面站电池安装后无法为平板电脑供电，使用地面站充电器也不能供电？<br><br><span class="label label-success">A</span> <p>拆开平板电脑固定板，重新插拔平板电脑电源线。</p><span class="label label-danger">Q</span> 飞机脚架横管可以插入脚架内，但不能卡住？<br><br><span class="label label-success">A</span> <p>重新固定脚架套管内部弹簧。</p><span class="label label-danger">Q</span> A2飞控地面站连接好手机热点后地图仍未能下载或无法连接飞机？<br><br><span class="label label-success">A</span> 如检查完电台信号灯是正常的，更换WIFI源可解决。<br><br><span class="label label-danger">Q</span> 切换图像颜色时图像突然变模糊？<br><br><span class="label label-success">A</span> 颜色切换过快导致，停止颜色切换，稍后图像会自动恢复。<br><br><span class="label label-danger">Q</span> 自带天地飞接受机的老款挂载经常出现云台不可控？<br><br><span class="label label-success">A</span> 挂载端的接收机受干扰，信号丢失导致。移动接收机天线，找到一个不受干扰的位置固定死信号线。<br><br><br><span class="label label-danger">Q</span> 在确定喊话器没有异常的情况下，喊话声音依旧卡顿。<br><br><br><span class="label label-success">A</span> 先检查电台天线是否连接牢固，如连接牢固检查电台天线功率，如电台天线功率正常则须更换电台。<br><br><br><span class="label label-danger">Q</span> 飞机挂载在摇杆和平板里都无法控制<br><br><br><span class="label label-success">A</span> 如挂载有锁定，先尝试把挂载锁定通道打开；擦拭挂载接触端；检查地面站版本与飞控版本是否匹配；检查快拆板是否最新。<br><br><br><span class="label label-danger">Q</span> 电台经常会断掉<br><br><br><span class="label label-success">A</span> 用产线处的功率机进行功率测试，每一条线路都要检测一次<br><br><br><span class="label label-danger">Q</span> 固件没有升级，提示设备已锁定<br><br><br><span class="label label-success">A</span> 把app调到飞行器信息，点固件升级栏，然后解除锁定<br><br><br><span class="label label-danger">Q</span> 在地面站录制视频存储到u盘，u盘到电脑端查看的时候显示不出地面站的录制视频资料。<br><br><br><span class="label label-success">A</span> 在u盘文件夹选项里面，勾选、显示隐藏的文件、文件夹和驱动器。 隐藏受保护的操作系统。<br><br><br><span class="label label-danger">Q</span> 飞机开机机臂报警<br><br><br><span class="label label-success">A</span> 检查机臂的电调是否有问题，和校准油门行程<br><br><br><span class="label label-danger">Q</span> 喊话器使用出现问题，经过检查后发现是固件版本问题<br><br><br><span class="label label-success">A</span> 升级固件版本。<br><br><br><span class="label label-danger">Q</span> 飞机在地面上进行桨叶检测时发现点击按钮但是桨叶不转<br><br><br><span class="label label-success">A</span> 检查了机臂是不是没没装好，适当加大油门值，直到触发桨叶测试。<br><br><br><br><span class="label label-danger">Q</span> 倾斜摄影建模后发现模型出现分层现象，检查发现使用了不同的pos点导致，地面站的和飞机端。<br><br><br><span class="label label-success">A</span> 使用飞机端pos点，尽量不要混用；如果要混用必须手动把两种pos点的高度调到一致。<br><br><br><span class="label label-danger">Q</span> 机臂解锁后仍出现报警声<br><br><br><span class="label label-success">A</span> 经检查，电调信号线无法接收到信号，无法修复，更换一个全新电调。<br><br><br><span class="label label-danger">Q</span> 图传没有图像。<br><br><br><span class="label label-success">A</span> 将飞机图传与挂载直接用HDMI线连接，地面在画面有图像。说明飞机端快拆与图传之间图像传输有问题。将飞机快拆端与图传端连接的HDMI线更换，问题解决。<br><br><br>## 2017年10月汇总<br><br><span class="label label-danger">Q</span> 上机测试，A2飞控3号机臂和6号机臂动力匹配不平衡，通过飞机悬停IOSD数据分析<br><br><span class="label label-success">A</span> 重新校准油门行程故障排除<br><br><span class="label label-danger">Q</span> 武高所飞机快拆图像无信号<br><br><span class="label label-success">A</span> 交换测试分别更换挂载，图传故障依旧，更换飞机快拆端HDMI线故障排除<br><br><span class="label label-danger">Q</span> 检测图传无图像<br><br><span class="label label-success">A</span> 交换测试分别更换挂载，图传，HDMI线故障依旧，更换飞机端快拆故障排除<br><br><span class="label label-danger">Q</span> 飞机图像正常，云台可控，其他挂载功能正常，喊话器无声音<br><br><span class="label label-success">A</span> 更换喊话麦克故障依旧，图传正常，说明控制上的问题，因是电台喊话控制，故通过排查为电台线序错误，正确线序为（白，黄，绿，红，黑）<br><br><span class="label label-danger">Q</span> 充电几分钟自动停止<br><br><span class="label label-success">A</span> 按select键三次，屏幕上端会显示时间格式（如00:02，定时两分钟停止充电），将时间调为00:00为无定时，如果设置为00；30则定时30分钟<br><br><span class="label label-danger">Q</span> 抛投有图像但是无法控制<br><br><span class="label label-success">A</span> 飞机端为新快拆，挂载为老快拆，导致不兼容，更换新快拆故障排除。<br><br><span class="label label-danger">Q</span> 飞机挂载红外时无图像，然后将飞机挂载20倍变焦，地面站图像正常，然后挂载抛投挂载，AV画质正常。所以判断是红外挂载问题。<br><br><span class="label label-success">A</span> 将挂载的电路板拆下来，发现里面高清线松掉，重新插拔后红外图像正常，然后将高清线插拔处打胶进行固定。<br><br><span class="label label-danger">Q</span> 飞机接挂载后地面站没有图像，但是用别的飞机同样的图传挂同样的挂载地面站有图像，然后用扫频仪测试图传频率，发现图传频率正常，所以推测可能是快拆板或者高清线有问题<br><br><span class="label label-success">A</span> 从仓库领新的高清线接在快拆端和图传相连，然后将飞机通电，发现地面站图像正常，说明快拆和高清线都正常，然后将快拆和新的高清线装好，图像问题解决<br><br><span class="label label-danger">Q</span> 飞机安全开关打开后，发现还有一个电调会报警有滴滴滴的声音，然后用地面站进行浆叶测试，发现报警的浆叶不会转动。然后将电池取出，将报警机臂的信号线重找插拔下问题解决，再重新插拔下发现问题又出现了<br><br><span class="label label-success">A</span> 先更换了信号线，问题还是未解决，然后怀疑是分线板有问题，万用表测试发现接触不良，更换电路板后问题解决。<br><br><span class="label label-danger">Q</span> 挂载箱子在温差变化较大的环境中，挂载很容易有小水珠液化，会影响挂载的使用<br><br><span class="label label-success">A</span> 建议在挂载箱倒膜内加一些干燥剂，保持挂载箱内干燥，防止水蒸气液化。<br><br><span class="label label-danger">Q</span> 喊话器声音太小<br><br><span class="label label-success">A</span> 和田军分区总共4台1550配备其中有两台设备的喊话器声音特别小，经排查是对讲机问题，因交货地点快递无法到达，配件无法寄到，问题暂未解决。<br><br><span class="label label-danger">Q</span> 电调不通电<br><br><span class="label label-success">A</span> 因6号机臂不转，经排查发现是电调坏掉，后更换电调问题解决。<br><br><span class="label label-danger">Q</span> 30倍变焦云台一直向右飘动<br><br><span class="label label-success">A</span> 30倍变焦通电后镜头一直向右漂移幅度较大，航向锁定模式下则不会，因业务要求以交货为主，客户也未发现，问题暂未解决。<br><br><span class="label label-danger">Q</span> 地面站u盘无法录屏<br><br><span class="label label-success">A</span> 地面站U盘格式不对无法录屏，更换格式后问题已解决。<br><br><span class="label label-danger">Q</span> 地面站错误报警<br><br><span class="label label-success">A</span> 飞机通电后地面站一直显示氢燃料余料不足报警，不是氢燃料飞机，更新最新版本地面站软件和飞控固件后问题已解决。<br><br><span class="label label-danger">Q</span> 1550在飞航线模式的时候电台突然接收不到信号<br><br><span class="label label-success">A</span> 电台重新对码<br><br><span class="label label-danger">Q</span> 地面站无法识别U盘，并无法使用录屏功能。<br><br><span class="label label-success">A</span> 将地面站U盘改为NTFS格式后，可以正常使用。<br><br><span class="label label-danger">Q</span> 地面站显示电压一直在变化<br><br><span class="label label-success">A</span> <ol><li>飞机动力电池与飞机没链接紧固；</li><li>电源半有故障。</li></ol><span class="label label-danger">Q</span> 倾斜摄影通电后自动拍照（一直）<br><br><span class="label label-success">A</span> <p>图传信号干扰到：</p><ol><li>倾斜摄影信号线更换为屏蔽线；</li><li>关闭图传（天线绑在脚架的飞机）</li></ol><p><span class="label label-danger">Q</span> 飞机挂载抽搐，无法自稳</p><p><span class="label label-success">A</span> 更换分电板</p>]]></content>
+      
+      <categories>
+          
+          <category> QuestionsAndAnswers </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>飞行调试常见问题及解决办法</title>
+      <link href="/2017/11/29/Flightdebugging_QAS/"/>
+      <url>/2017/11/29/Flightdebugging_QAS/</url>
+      <content type="html"><![CDATA[<blockquote><p>飞行调试常见问题及解决办法<br>更新日期：2017-11-25</p></blockquote><h2 id="2017年11月汇总"><a href="#2017年11月汇总" class="headerlink" title="2017年11月汇总"></a>2017年11月汇总</h2><span class="label label-danger">Q</span> 测试拉距时频繁丢控？<br><br><span class="label label-success">A</span> 重新将遥控器与接收机对码后，重新测试恢复正常<br><br><span class="label label-danger">Q</span> 按压设备电源开关时，出现火花和烟雾，有明显烧焦气味，导致设备无法工作。<br><br><br><span class="label label-success">A</span> 更换新的分线板<br><br><br><span class="label label-danger">Q</span> 电源开关开启后无法关闭<br><br><br><span class="label label-success">A</span> 更换两次电源开关后正常。<br><br><br><span class="label label-danger">Q</span> 网口版松下20倍，因侧面多加了一块网口图传板，导致整机发热严重，20分钟左右图传会死机，重启后恢复。<br><br><br><span class="label label-success">A</span> 可在网口板后放加垫约3mm的散热硅胶，相机会延长到40分钟才死机。<br><br><span class="label label-danger">Q</span> 龙华消防喊话为433电台版本，客户不满意延迟现象。更换新版电台喊话后，挂载可控没有声音。<br><br><span class="label label-success">A</span> 排除了喊话挂载、飞控、电台两端等环节，最后发现问题出现在快拆板内传输声音的线松了<br><br><span class="label label-danger">Q</span> 系留1200配200米线盘一直不稳定<br><br><span class="label label-success">A</span> 经测试分析后发现200米线盘较100米线盘内阻大，导致功率变低。<br><br><span class="label label-danger">Q</span> “演示机五号六号机臂不转，把它更换到2号也不转并且都发出滴滴响。”<br><br><span class="label label-success">A</span> 电调信号线无传输，无法修复，到产线更换一个新电调解决。<br><br><span class="label label-danger">Q</span> mc8-1200飞机测试续航时7号机臂突然停转，飞机没有翻机，油门校准后往右侧翻。<br><br><span class="label label-success">A</span> 重新校准油门行程解决。<br><br><span class="label label-danger">Q</span> 与冗余陀螺仪偏差过大<br><br><span class="label label-success">A</span> 打开专业模式，修改“GPS_HDOP_GOOD”参数值，将0改成140.<br><br><br>## 2017年10月汇总<br><br><br><span class="label label-danger">Q</span> GPS异常，定位不准。飞机在地图上的位置与实际位置相差太多（10米以上）<br><br><span class="label label-success">A</span> 重新更换gps模块<br><br><span class="label label-danger">Q</span> 飞机悬停抖动较为明显，调参无明显改善<br><br><span class="label label-success">A</span> IMU减震优化<br><br><span class="label label-danger">Q</span> 测试飞行中途再次出现图像蓝屏，用手轻拍挂载也能复现问题<br><br><span class="label label-success">A</span> 更换飞机端快拆pcba版<br><br><span class="label label-danger">Q</span> 地面站实时电流显示为“0”<br><br><span class="label label-success">A</span> 更换分线板<br><br><span class="label label-danger">Q</span> 电台连接距离较近（不到5米就会断连），是由于地面站端电台馈线接触不良导致<br><br><span class="label label-success">A</span> 更换地面站端电台馈线<br><br><span class="label label-danger">Q</span> 航线模式中切到引导模式，地面站控制不了等问题。<br><br><span class="label label-success">A</span> 解决办法升级到最新地面站软件和固件。<br><br><span class="label label-danger">Q</span> 通电加挂载之后没有标清和高清图像。<br><br><span class="label label-success">A</span> <ol><li>图传问题的排查方法，重启地面站与飞机，挂载与云台之间重新拔插。</li><li>更换hdmi线。更换图传。把挂载与飞控连接的线重新拔插一次。</li><li>用扫频仪检测。”</li></ol><span class="label label-danger">Q</span> 电机解锁后有一个电机未解锁，安全锁解锁后有一个电机仍滴滴的响<br><br><span class="label label-success">A</span> 飞机失控导致机身信号线断裂，重新焊好测试ok<br><br><span class="label label-danger">Q</span> 图像显示蓝屏<br><br><span class="label label-success">A</span> 测试发现飞机图传发射端无功率发出，重新更换图传测试0k<br><br><span class="label label-danger">Q</span> 飞机飞行过程中左右晃动，定位不准<br><br><span class="label label-success">A</span> 重新校准地磁，飞机飞行稳定<br><br><span class="label label-danger">Q</span> 图像显示画中画<br><br><span class="label label-success">A</span> <ol><li>“起初以为是安装顺序错误，后多次测试系留是这样，是gopro的按键理解错误</li><li>gopro左侧为开机键，下侧也录像键，如果直接按录像键也可以开机，但为画中画，开机按左侧键则显示正常”</li></ol><p><span class="label label-danger">Q</span> “氢燃料飞机，电台和图传天线的有效传输部分<br>被电堆挡住，影响数据、图像传输。”</p><p><span class="label label-success">A</span> 将天线延长，固定在脚架下半部。</p><p><span class="label label-danger">Q</span> “脚架横管两端的胶套，拆卸横管过程中每次<br>都要把胶套取下，且实际作用不大。”</p><p><span class="label label-success">A</span> 建议可以尝试使用和横管直径一样的胶塞而非胶套。</p>]]></content>
+      
+      <categories>
+          
+          <category> QuestionsAndAnswers </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>售后常见问题及解决办法</title>
+      <link href="/2017/11/29/Aftersale_QAS/"/>
+      <url>/2017/11/29/Aftersale_QAS/</url>
+      <content type="html"><![CDATA[<blockquote><p>售后常见问题及解决办法<br>更新日期：2017-11-29</p></blockquote><h2 id="2017年11月汇总"><a href="#2017年11月汇总" class="headerlink" title="2017年11月汇总"></a>2017年11月汇总</h2><span class="label label-danger">Q</span> 电机不转？<br><br><span class="label label-success">A</span> <ol><li>分析排除是否是电机电调损坏 </li><li>确认电机电调连接线是否正常  </li><li>设置电调行程是否校准好 </li></ol><span class="label label-danger">Q</span> 飞机放在地面上但是地面站飞机会有飞行轨迹？<br><br><span class="label label-success">A</span> <ol><li>确认是否是新版本地面站软件</li><li>重新校准指南针 </li><li>导出飞行日志查询是否正常 </li><li>更换GPS</li></ol><span class="label label-danger">Q</span> 喊话无声音可以控制？<br><br><span class="label label-success">A</span> <ol><li>确认地面站是否可以连接 </li><li>检查喊话喇叭是否损坏 </li><li>检查电台和快拆的连接线是否松动或线序是否正常</li></ol><p><span class="label label-danger">Q</span> 通电后六个电机不转无法启动？</p><p><span class="label label-success">A</span> 将设备通电检测，电机有供电，电机机臂有些有信号有些没有，排查分线板信号和飞控信号都有，后校准了油门电机正常工作，飞机正常工作。</p><p><span class="label label-danger">Q</span> 飞机飞行掉高悬停不稳？</p><p><span class="label label-success">A</span> 飞机是N3飞控，更换了新N3飞控，飞机还是掉高，最后更换了A2飞控飞机掉高相对较好，但飞机抖动，通过检查机架发现机臂有点松动，最后重新给机臂打胶固定，飞机正常工作。</p><p><span class="label label-danger">Q</span> 飞机起飞往一般倾斜，电台无法连接？</p><p><span class="label label-success">A</span> 通过校准imu和GPS飞机还是飞行倾斜，后更换imu飞机可以正常起飞，平板重装系统后装过软件和驱动后可以正常连接。</p><h2 id="2017年10月汇总"><a href="#2017年10月汇总" class="headerlink" title="2017年10月汇总"></a>2017年10月汇总</h2><p><span class="label label-danger">Q</span> 遥控器显示丢失？</p><p><span class="label label-success">A</span> 因为飞控版本和地面站版本不匹配导致地面站检测不到遥控器的信号，地面站和飞控的版本一定要匹配。</p><p><span class="label label-danger">Q</span> GPS显示罗盘零偏过大？</p><p><span class="label label-success">A</span> 硬件同事检测发现罗盘存在问题，现在已经更新成新版本的GPS，现在新版本的GPS可以解决这个问题， 。</p><p><span class="label label-danger">Q</span> 地面站显示屏HDMI模式下闪屏？</p><p><span class="label label-success">A</span> 显示屏控制板异常更换新控制板后解决。</p><p><span class="label label-danger">Q</span> 电脑无法开机，开机闪屏不断重复开机画面？</p><p><span class="label label-success">A</span> 开机出现此画面，等他耗完电量后，插上充电，多冲一段时间再开机，电脑就可以正常显示。</p><p><span class="label label-danger">Q</span> 维修时主板报警，滴滴响？</p><p><span class="label label-success">A</span> 将设备交由研发同事检测，主板无法检测到信号所以报警，旧快拆投弹器只有信号线，杜邦线上都是信号线，更换插线方式，主板不报警。</p><p><span class="label label-danger">Q</span> 飞机测试返航点，飞到返航点时还往一边飞，定位错误？</p><p><span class="label label-success">A</span> 咨询研发同事，问题在于飞机固件和地面站软件版本过低，所以定位不准，更新了固件及地面站软件后，飞机返航点定位正常。</p>]]></content>
+      
+      <categories>
+          
+          <category> QuestionsAndAnswers </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>常用下载汇总</title>
+      <link href="/2017/11/25/DownloadPage/"/>
+      <url>/2017/11/25/DownloadPage/</url>
+      <content type="html"><![CDATA[<h2 id="常用下载汇总"><a href="#常用下载汇总" class="headerlink" title="常用下载汇总"></a>常用下载汇总</h2><h3 id="数据管理软件"><a href="#数据管理软件" class="headerlink" title="数据管理软件"></a>数据管理软件</h3><ul><li><p><a href="http://47.104.31.20/mmcdms/MMCDMSystemInstructionsV1.1.pdf" target="_blank" rel="noopener">下载 数据管理软件说明书</a></p></li><li><p><a href="http://47.104.31.20/mmcdms/MMC_DMSystem_V1.2.29.180123.exe" target="_blank" rel="noopener">下载 数据管理软件</a></p></li></ul><h3 id="产品新命名规范"><a href="#产品新命名规范" class="headerlink" title="产品新命名规范"></a>产品新命名规范</h3><ul><li><p><a href="http://47.104.31.20/mmcdms/MMCProductNamingRulesV1.3.pdf" target="_blank" rel="noopener">下载 MMC产品新命名规范V1.3</a></p></li><li><p><a href="http://47.104.31.20/mmcdms/MMC产品命名汇总V1.3.xls" target="_blank" rel="noopener">下载 MMC产品命名汇总V1.3</a></p></li></ul><h3 id="生产物料编码表"><a href="#生产物料编码表" class="headerlink" title="生产物料编码表"></a>生产物料编码表</h3><ul><li><a href="http://47.104.31.20/mmcdms/生产物料编码记录表-应用.xlsx" target="_blank" rel="noopener">下载 生产物料编码表</a></li></ul>]]></content>
+      
+      <categories>
+          
+          <category> DownLoad </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>MMC产品新命名规范</title>
+      <link href="/2017/11/25/MMCProductNamingRules/"/>
+      <url>/2017/11/25/MMCProductNamingRules/</url>
+      <content type="html"><![CDATA[<blockquote><p>MMC产品新命名规范<br>版本号：V1.1<br>更新日期：2017-11-25</p></blockquote><a id="more"></a><h2 id="全文-（下载MMC产品命名汇总V1-3）"><a href="#全文-（下载MMC产品命名汇总V1-3）" class="headerlink" title="全文 （下载MMC产品命名汇总V1.3）"></a>全文 （<a href="http://47.104.31.20/mmcdms/MMC产品命名汇总V1.4.xls" target="_blank" rel="noopener">下载MMC产品命名汇总V1.3</a>）</h2><p><a href="http://ow365.cn/?i=14889&furl=http://47.104.31.20/mmcdms/MMC产品命名汇总V1.4.xls" target="_blank">预览命名汇总文件</a></p><h2 id="全文（下载MMC产品新命名规范V1-1）"><a href="#全文（下载MMC产品新命名规范V1-1）" class="headerlink" title="全文（下载MMC产品新命名规范V1.1）"></a>全文（<a href="http://47.104.31.20/mmcdms/MMCProductNamingRulesV1.3.pdf" target="_blank" rel="noopener">下载MMC产品新命名规范V1.1</a>）</h2><p>正在加载…</p><object classid="clsid:CA8A9780-280D-11CF-A24D-444553540000" width="500" height="1000" border="0"><br><param name="_Version" value="65539"><br><param name="_ExtentX" value="20108"><br><param name="_ExtentY" value="10866"><br><param name="_StockProps" value="0"><br><param name="SRC" value="http://47.104.31.20/mmcdms/MMCProductNamingRulesV1.1.pdf"><br><object data="http://47.104.31.20/mmcdms/MMCProductNamingRulesV1.1.pdf" type="application/pdf" width="1000" height="1200"><br></object><br></object>  ]]></content>
+      
+      <categories>
+          
+          <category> Instructions </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>数据管理系统软件使用说明书</title>
+      <link href="/2017/11/25/MMCDMSystemInstructions/"/>
+      <url>/2017/11/25/MMCDMSystemInstructions/</url>
+      <content type="html"><![CDATA[<blockquote><p>数据管理系统软件使用说明书<br>版本号：V1.1<br>更新日期：2017-11-25</p></blockquote><a id="more"></a><h2 id="全文（下载）"><a href="#全文（下载）" class="headerlink" title="全文（下载）"></a>全文（<a href="http://47.104.31.20/mmcdms/MMCDMSystemInstructionsV1.1.pdf" target="_blank" rel="noopener">下载</a>）</h2><p>正在加载…</p><object classid="clsid:CA8A9780-280D-11CF-A24D-444553540000" width="500" height="1000" border="0"><br><param name="_Version" value="65539"><br><param name="_ExtentX" value="20108"><br><param name="_ExtentY" value="10866"><br><param name="_StockProps" value="0"><br><param name="SRC" value="http://47.104.31.20/mmcdms/MMCDMSystemInstructionsV1.1.pdf"><br><object data="http://47.104.31.20/mmcdms/MMCDMSystemInstructionsV1.1.pdf" type="application/pdf" width="1000" height="1200"><br></object><br></object>  ]]></content>
+      
+      <categories>
+          
+          <category> Instructions </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+  
+  
+</search>
