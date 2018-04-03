@@ -270,47 +270,198 @@
 <li><p>返回值</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">status  = 0;</span><br><span class="line">message = &apos;数据更新成功!&apos;;</span><br><span class="line"></span><br><span class="line">status  = 1;</span><br><span class="line">message = &apos;数据更新失败！&apos;;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">### 商品货号在线修改</span><br><span class="line"></span><br><span class="line">权限：goods_manage</span><br><span class="line">注：商品货号为唯一识别码，修改前先进性查重操作。</span><br><span class="line"></span><br><span class="line">&gt; HOST：_URL_/admin/goods/goodsSnChange</span><br><span class="line"></span><br><span class="line">- 请求方式：POST</span><br><span class="line">- 参数</span><br><span class="line">```   </span><br><span class="line">goods_id,编号</span><br><span class="line">goods_sn,货号</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">status  = 0;</span><br><span class="line">message = &apos;数据更新成功!&apos;;</span><br><span class="line"></span><br><span class="line">status  = 1;</span><br><span class="line">message = &apos;数据更新失败！&apos;;</span><br></pre></td></tr></table></figure>
+<h3 id="商品货号在线修改"><a href="#商品货号在线修改" class="headerlink" title="商品货号在线修改"></a>商品货号在线修改</h3><p>权限：goods_manage<br>注：商品货号为唯一识别码，修改前先进性查重操作。</p>
+<blockquote>
+<p>HOST：<em>URL</em>/admin/goods/goodsSnChange</p>
+</blockquote>
+<ul>
+<li>请求方式：POST</li>
+<li><p>参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">goods_id,编号</span><br><span class="line">goods_sn,货号</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>返回值</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">status = 501;</span><br><span class="line">message= 该条数据存在；</span><br><span class="line"></span><br><span class="line">status = 777；</span><br><span class="line">message= 权限；</span><br><span class="line"></span><br><span class="line">status  = 1;</span><br><span class="line">message = &apos;数据更新成功!&apos;;</span><br><span class="line"></span><br><span class="line">status  = 0;</span><br><span class="line">message = &apos;数据更新失败！&apos;;</span><br></pre></td></tr></table></figure>
+<h3 id="商品价格在线修改"><a href="#商品价格在线修改" class="headerlink" title="商品价格在线修改"></a>商品价格在线修改</h3><p>权限：goods_manage</p>
+<blockquote>
+<p>HOST：<em>URL</em>/admin/goods/shopPriceChange</p>
+</blockquote>
+<ul>
+<li>请求方式：POST</li>
+<li><p>参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">goods_id,编号</span><br><span class="line">shop_price,价格</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>返回值</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">status  = 0;</span><br><span class="line">message = &apos;数据更新成功!&apos;;</span><br><span class="line"></span><br><span class="line">status  = 1;</span><br><span class="line">message = &apos;数据更新失败！&apos;;</span><br></pre></td></tr></table></figure>
+<h3 id="商品上架在线修改"><a href="#商品上架在线修改" class="headerlink" title="商品上架在线修改"></a>商品上架在线修改</h3><p>权限：goods_manage</p>
+<blockquote>
+<p>HOST：<em>URL</em>/admin/goods/onSaleStatusChange</p>
+</blockquote>
+<ul>
+<li>请求方式：POST</li>
+<li><p>参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">goods_id,编号</span><br><span class="line">is_on_sale,上架, 0:取消  1：选中</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>返回值</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">status  = 0;</span><br><span class="line">message = &apos;数据更新成功!&apos;;</span><br><span class="line"></span><br><span class="line">status  = 1;</span><br><span class="line">message = &apos;数据更新失败！&apos;;</span><br></pre></td></tr></table></figure>
+<h3 id="商品精品在线修改"><a href="#商品精品在线修改" class="headerlink" title="商品精品在线修改"></a>商品精品在线修改</h3><blockquote>
+<p>HOST：<em>URL</em>/admin/goods/isBestStatusChange</p>
+</blockquote>
+<ul>
+<li>请求方式：POST</li>
+<li>参数</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">goods_id,编号</span><br><span class="line">is_best,精品, 0:取消  1：选中</span><br></pre></td></tr></table></figure>
 <ul>
 <li>返回值</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">status = 501;</span><br><span class="line">message= 该条数据存在；</span><br><span class="line"></span><br><span class="line">status = 777；</span><br><span class="line">message= 权限；</span><br><span class="line"></span><br><span class="line">status  = 1;</span><br><span class="line">message = &apos;数据更新成功!&apos;;</span><br><span class="line"></span><br><span class="line">status  = 0;</span><br><span class="line">message = &apos;数据更新失败！&apos;;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">### 商品价格在线修改</span><br><span class="line"></span><br><span class="line">权限：goods_manage</span><br><span class="line">&gt; HOST：_URL_/admin/goods/shopPriceChange</span><br><span class="line"></span><br><span class="line">- 请求方式：POST</span><br><span class="line">- 参数</span><br><span class="line">```   </span><br><span class="line">goods_id,编号</span><br><span class="line">shop_price,价格</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">status  = 0;</span><br><span class="line">message = &apos;数据更新成功!&apos;;</span><br><span class="line"></span><br><span class="line">status  = 1;</span><br><span class="line">message = &apos;数据更新失败！&apos;;</span><br></pre></td></tr></table></figure>
+<h3 id="商品新品在线修改"><a href="#商品新品在线修改" class="headerlink" title="商品新品在线修改"></a>商品新品在线修改</h3><blockquote>
+<p>HOST：<em>URL</em>/admin/goods/isNewStatusChange</p>
+</blockquote>
+<ul>
+<li>请求方式：POST</li>
+<li>参数</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">goods_id,编号</span><br><span class="line">is_new,新品, 0:取消  1：选中</span><br></pre></td></tr></table></figure>
 <ul>
 <li>返回值</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">status  = 0;</span><br><span class="line">message = &apos;数据更新成功!&apos;;</span><br><span class="line"></span><br><span class="line">status  = 1;</span><br><span class="line">message = &apos;数据更新失败！&apos;;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">### 商品上架在线修改</span><br><span class="line"></span><br><span class="line">权限：goods_manage</span><br><span class="line">&gt; HOST：_URL_/admin/goods/onSaleStatusChange</span><br><span class="line"></span><br><span class="line">- 请求方式：POST</span><br><span class="line">- 参数</span><br><span class="line">```   </span><br><span class="line">goods_id,编号</span><br><span class="line">is_on_sale,上架, 0:取消  1：选中</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">status  = 0;</span><br><span class="line">message = &apos;数据更新成功!&apos;;</span><br><span class="line"></span><br><span class="line">status  = 1;</span><br><span class="line">message = &apos;数据更新失败！&apos;;</span><br></pre></td></tr></table></figure>
+<h3 id="商品热销在线修改"><a href="#商品热销在线修改" class="headerlink" title="商品热销在线修改"></a>商品热销在线修改</h3><blockquote>
+<p>HOST：<em>URL</em>/admin/goods/isHotStatusChange</p>
+</blockquote>
+<ul>
+<li>请求方式：POST</li>
+<li>参数</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">goods_id,编号</span><br><span class="line">is_hot,热销, 0:取消  1：选中</span><br></pre></td></tr></table></figure>
 <ul>
 <li>返回值</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">status  = 0;</span><br><span class="line">message = &apos;数据更新成功!&apos;;</span><br><span class="line"></span><br><span class="line">status  = 1;</span><br><span class="line">message = &apos;数据更新失败！&apos;;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 商品精品在线修改</span><br><span class="line"></span><br><span class="line">&gt; HOST：_URL_/admin/goods/isBestStatusChange</span><br><span class="line"></span><br><span class="line">- 请求方式：POST</span><br><span class="line">- 参数</span><br><span class="line"></span><br><span class="line">```   </span><br><span class="line">goods_id,编号</span><br><span class="line">is_best,精品, 0:取消  1：选中</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">status  = 0;</span><br><span class="line">message = &apos;数据更新成功!&apos;;</span><br><span class="line"></span><br><span class="line">status  = 1;</span><br><span class="line">message = &apos;数据更新失败！&apos;;</span><br></pre></td></tr></table></figure>
+<h3 id="商品推荐排序在线修改"><a href="#商品推荐排序在线修改" class="headerlink" title="商品推荐排序在线修改"></a>商品推荐排序在线修改</h3><blockquote>
+<p>HOST：<em>URL</em>/admin/goods/sortOrderChange</p>
+</blockquote>
+<ul>
+<li>请求方式：POST</li>
+<li>参数</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">goods_id,编号</span><br><span class="line">sort_order,推荐排序</span><br></pre></td></tr></table></figure>
 <ul>
 <li>返回值</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">status  = 0;</span><br><span class="line">message = &apos;数据更新成功!&apos;;</span><br><span class="line"></span><br><span class="line">status  = 1;</span><br><span class="line">message = &apos;数据更新失败！&apos;;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">### 商品新品在线修改</span><br><span class="line"></span><br><span class="line">&gt; HOST：_URL_/admin/goods/isNewStatusChange</span><br><span class="line"></span><br><span class="line">- 请求方式：POST</span><br><span class="line">- 参数</span><br><span class="line"></span><br><span class="line">```   </span><br><span class="line">goods_id,编号</span><br><span class="line">is_new,新品, 0:取消  1：选中</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">status  = 0;</span><br><span class="line">message = &apos;数据更新成功!&apos;;</span><br><span class="line"></span><br><span class="line">status  = 1;</span><br><span class="line">message = &apos;数据更新失败！&apos;;</span><br></pre></td></tr></table></figure>
+<h3 id="商品库存在线修改"><a href="#商品库存在线修改" class="headerlink" title="商品库存在线修改"></a>商品库存在线修改</h3><blockquote>
+<p>HOST：<em>URL</em>/admin/goods/goodsNumberChange</p>
+<ul>
+<li>请求方式：POST</li>
+<li>参数</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">goods_id,编号</span><br><span class="line">goods_number，库存</span><br></pre></td></tr></table></figure>
 <ul>
 <li>返回值</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">status  = 0;</span><br><span class="line">message = &apos;数据更新成功!&apos;;</span><br><span class="line"></span><br><span class="line">status  = 1;</span><br><span class="line">message = &apos;数据更新失败！&apos;;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">### 商品热销在线修改</span><br><span class="line"></span><br><span class="line">&gt; HOST：_URL_/admin/goods/isHotStatusChange</span><br><span class="line"></span><br><span class="line">- 请求方式：POST</span><br><span class="line">- 参数</span><br><span class="line"></span><br><span class="line">```   </span><br><span class="line">goods_id,编号</span><br><span class="line">is_hot,热销, 0:取消  1：选中</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">status  = 0;</span><br><span class="line">message = &apos;数据更新成功!&apos;;</span><br><span class="line"></span><br><span class="line">status  = 1;</span><br><span class="line">message = &apos;数据更新失败！&apos;;</span><br></pre></td></tr></table></figure>
+<h3 id="商品添加"><a href="#商品添加" class="headerlink" title="商品添加"></a>商品添加</h3><blockquote>
+<p>说明：商品的添加界面<br>HOST：<em>URL</em>/admin/goods/goodsEdit<br>参数来源：</p>
+</blockquote>
+<pre><code>参数            参数说明                            调用接口    
+</code></pre><p>通用信息        </p>
+<ul>
+<li>商品名称:goods_name      mmc_goods</li>
+<li>商品货号:goods_sn</li>
+<li>商品分类:cat_id          mmc_catgory        HOST：<em>URL</em>/admin/category/menuCategory</li>
+<li><a href="扩展分类">扩展分类del</a></li>
+<li>商品品牌:brand_id        mmc_brand          HOST：<em>URL</em>/admin/brand/menuBrand</li>
+<li>本店售价：shop_price</li>
+<li>市场售价：market_price</li>
+<li>上传商品图片:goods_img</li>
+<li>上传商品缩略图：goods_thumb</li>
+</ul>
+<p>详细描述</p>
+<ul>
+<li>详细描述：goods_desc</li>
+</ul>
+<p>其他信息</p>
+<ul>
+<li>商品重量：goods_weight      两位小数</li>
+<li>商品库存数量：goods_number</li>
+<li><a href="库存警告数量：warn_number">库存警告数量del</a></li>
+<li>加入推荐：is_best  is_new  is_hot       精品 新品 热销</li>
+<li><a href="is_alone_sale">能作为普通商品销售del</a></li>
+<li><a href="is_shipping">是否为免运费商品del</a></li>
+<li><p>上架:is_on_sale</p>
+</li>
+<li><p>商品关键词：keywords</p>
+</li>
+<li>商品简单描述: goods_brief</li>
+<li>商家备注：seller_note</li>
+</ul>
+<p>商品属性 ：列表选择商品的所属类型</p>
+<ul>
+<li>商品类型：goods_type        mmc_goods_type</li>
+</ul>
+<p>商品相册 mmc_goods_gallery</p>
+<ul>
+<li>goods_id</li>
+<li>img_url</li>
+<li>img_desc</li>
+<li>thumb_url</li>
+<li>img_original</li>
+</ul>
+<p>关联商品：  table：mmc_link_goods</p>
+<ul>
+<li>goods_id</li>
+<li>link_goods_id</li>
+<li>is_double</li>
+<li>admin_id</li>
+</ul>
+<p>配件：table: mmc_group_goods</p>
+<ul>
+<li>parent_id      父类ID：本商品goods_id</li>
+<li>goods_id       配件商品ID：mmc_goods</li>
+<li>goods_price    配件价格</li>
+<li>admin_id</li>
+</ul>
+<p>add_goods_article  goodsId<br>drop_goods_article  goodsId</p>
+<h2 id="商品品牌"><a href="#商品品牌" class="headerlink" title="商品品牌"></a>商品品牌</h2><p>商品品牌：mmc_brand</p>
+<h3 id="商品品牌菜单"><a href="#商品品牌菜单" class="headerlink" title="商品品牌菜单"></a>商品品牌菜单</h3><blockquote>
+<p>HOST：<em>URL</em>/admin/brand/menuBrand</p>
+<ul>
+<li>请求方式：POST</li>
+<li>参数</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void</span><br></pre></td></tr></table></figure>
 <ul>
 <li>返回值</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">status  = 0;</span><br><span class="line">message = &apos;数据更新成功!&apos;;</span><br><span class="line"></span><br><span class="line">status  = 1;</span><br><span class="line">message = &apos;数据更新失败！&apos;;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">### 商品推荐排序在线修改</span><br><span class="line"></span><br><span class="line">&gt; HOST：_URL_/admin/goods/sortOrderChange</span><br><span class="line"></span><br><span class="line">- 请求方式：POST</span><br><span class="line">- 参数</span><br><span class="line"></span><br><span class="line">```   </span><br><span class="line">goods_id,编号</span><br><span class="line">sort_order,推荐排序</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;brand_id&quot;:&quot;1&quot;,</span><br><span class="line">        &quot;brand_name&quot;:&quot;\u79d1\u6bd4\u7279&quot;</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h2 id="商品类型分类"><a href="#商品类型分类" class="headerlink" title="商品类型分类"></a>商品类型分类</h2><p>商品类型：mmc_goods_type</p>
+<h3 id="商品类型菜单"><a href="#商品类型菜单" class="headerlink" title="商品类型菜单"></a>商品类型菜单</h3><blockquote>
+<p>HOST：<em>URL</em>/admin/goodstype/menuGoodstype</p>
+<ul>
+<li>请求方式：POST</li>
+<li>参数</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void</span><br></pre></td></tr></table></figure>
 <ul>
 <li>返回值</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">status  = 0;</span><br><span class="line">message = &apos;数据更新成功!&apos;;</span><br><span class="line"></span><br><span class="line">status  = 1;</span><br><span class="line">message = &apos;数据更新失败！&apos;;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">### 商品库存在线修改</span><br><span class="line"></span><br><span class="line">&gt; HOST：_URL_/admin/goods/goodsNumberChange</span><br><span class="line">- 请求方式：POST</span><br><span class="line">- 参数</span><br><span class="line"></span><br><span class="line">```   </span><br><span class="line">goods_id,编号</span><br><span class="line">goods_number，库存</span><br></pre></td></tr></table></figure>
-<ul>
-<li>返回值</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line">status  = 0;</span><br><span class="line">message = &apos;数据更新成功!&apos;;</span><br><span class="line"></span><br><span class="line">status  = 1;</span><br><span class="line">message = &apos;数据更新失败！&apos;;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 商品添加</span><br><span class="line"></span><br><span class="line">&gt; 说明：商品的添加界面</span><br><span class="line">&gt; HOST：_URL_/admin/goods/goodsEdit</span><br><span class="line">&gt; 参数来源：</span><br><span class="line"></span><br><span class="line">           参数            参数说明                            调用接口    </span><br><span class="line">通用信息        </span><br><span class="line">- 商品名称:goods_name      mmc_goods</span><br><span class="line">- 商品货号:goods_sn</span><br><span class="line">- 商品分类:cat_id          mmc_catgory        HOST：_URL_/admin/category/menuCategory</span><br><span class="line">- [扩展分类del](扩展分类)</span><br><span class="line">- 商品品牌:brand_id        mmc_brand          HOST：_URL_/admin/brand/menuBrand</span><br><span class="line">- 本店售价：shop_price</span><br><span class="line">- 市场售价：market_price</span><br><span class="line">- 上传商品图片:goods_img</span><br><span class="line">- 上传商品缩略图：goods_thumb</span><br><span class="line"></span><br><span class="line">详细描述</span><br><span class="line">- 详细描述：goods_desc</span><br><span class="line"></span><br><span class="line">其他信息</span><br><span class="line">- 商品重量：goods_weight      两位小数</span><br><span class="line">- 商品库存数量：goods_number</span><br><span class="line">- [库存警告数量del](库存警告数量：warn_number)</span><br><span class="line">- 加入推荐：is_best  is_new  is_hot       精品 新品 热销</span><br><span class="line">- [能作为普通商品销售del](is_alone_sale)</span><br><span class="line">- [是否为免运费商品del](is_shipping)</span><br><span class="line">- 上架:is_on_sale</span><br><span class="line"></span><br><span class="line">- 商品关键词：keywords</span><br><span class="line">- 商品简单描述: goods_brief</span><br><span class="line">- 商家备注：seller_note</span><br><span class="line"></span><br><span class="line">商品属性 ：列表选择商品的所属类型</span><br><span class="line">- 商品类型：goods_type        mmc_goods_type</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">商品相册 mmc_goods_gallery</span><br><span class="line">- goods_id</span><br><span class="line">- img_url</span><br><span class="line">- img_desc</span><br><span class="line">- thumb_url</span><br><span class="line">- img_original</span><br><span class="line"></span><br><span class="line">关联商品：  table：mmc_link_goods</span><br><span class="line">- goods_id</span><br><span class="line">- link_goods_id</span><br><span class="line">- is_double</span><br><span class="line">- admin_id</span><br><span class="line"></span><br><span class="line">配件：table: mmc_group_goods</span><br><span class="line">- parent_id      父类ID：本商品goods_id</span><br><span class="line">- goods_id       配件商品ID：mmc_goods</span><br><span class="line">- goods_price    配件价格</span><br><span class="line">- admin_id</span><br><span class="line"></span><br><span class="line">add_goods_article  goodsId</span><br><span class="line">drop_goods_article  goodsId</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 商品品牌</span><br><span class="line"></span><br><span class="line">商品品牌：mmc_brand</span><br><span class="line"></span><br><span class="line">### 商品品牌菜单</span><br><span class="line">&gt; HOST：_URL_/admin/brand/menuBrand</span><br><span class="line">- 请求方式：POST</span><br><span class="line">- 参数</span><br><span class="line"></span><br><span class="line">```   </span><br><span class="line">void</span><br></pre></td></tr></table></figure>
-<ul>
-<li>返回值</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;brand_id&quot;:&quot;1&quot;,</span><br><span class="line">        &quot;brand_name&quot;:&quot;\u79d1\u6bd4\u7279&quot;</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">## 商品类型分类</span><br><span class="line">商品类型：mmc_goods_type</span><br><span class="line"></span><br><span class="line">### 商品类型菜单</span><br><span class="line"></span><br><span class="line">&gt; HOST：_URL_/admin/goodstype/menuGoodstype</span><br><span class="line">- 请求方式：POST</span><br><span class="line">- 参数</span><br><span class="line"></span><br><span class="line">```   </span><br><span class="line">void</span><br></pre></td></tr></table></figure>
-<ul>
-<li>返回值</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">cat_id</span><br><span class="line">cat_name</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">## 文件上传</span><br><span class="line"></span><br><span class="line">&gt; HOSt:_URL_/home/Tools/upload</span><br><span class="line"></span><br><span class="line">```html</span><br><span class="line">&lt;form action=&quot;http://www.store.com/home/Tools/upload&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;file&quot; name=&quot;image&quot;/&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;上传&quot; id=&quot;button&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat_id</span><br><span class="line">cat_name</span><br></pre></td></tr></table></figure>
+<h2 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h2><blockquote>
+<p>HOSt:<em>URL</em>/home/Tools/upload</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"http://www.store.com/home/Tools/upload"</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">enctype</span>=<span class="string">"multipart/form-data"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"image"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"上传"</span> <span class="attr">id</span>=<span class="string">"button"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="错误返回"><a href="#错误返回" class="headerlink" title="错误返回"></a>错误返回</h2><p>返回例子：</p>
 <p>{status: int;  message:”string” }</p>
 <p>|名称|类型|</p>
