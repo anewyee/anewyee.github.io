@@ -373,57 +373,78 @@
 <h3 id="商品添加"><a href="#商品添加" class="headerlink" title="商品添加"></a>商品添加</h3><blockquote>
 <p>说明：商品的添加界面<br>HOST：<em>URL</em>/admin/goods/goodsEdit<br>参数来源：</p>
 </blockquote>
-<pre><code>       参数            参数说明                            调用接口    
+<pre><code>       参数               参数表说明                            调用接口    
 通用信息        
-- 商品名称:goods_name      mmc_goods
-- 商品货号:goods_sn
-- 商品分类:cat_id          mmc_catgory        HOST：_URL_/admin/category/menuCategory
-- [扩展分类del](扩展分类)
-- 商品品牌:brand_id        mmc_brand          HOST：_URL_/admin/brand/menuBrand
-- 本店售价：shop_price
-- 市场售价：market_price
-- 上传商品图片:goods_img
-- 上传商品缩略图：goods_thumb
-
-详细描述
-- 详细描述：goods_desc
-
-其他信息
-- 商品重量：goods_weight      两位小数
-- 商品库存数量：goods_number
-- [库存警告数量del](库存警告数量：warn_number)
-- 加入推荐：is_best  is_new  is_hot       精品 新品 热销
-- [能作为普通商品销售del](is_alone_sale)
-- [是否为免运费商品del](is_shipping)
-- 上架:is_on_sale
-
-- 商品关键词：keywords
-- 商品简单描述: goods_brief
-- 商家备注：seller_note
-
-商品属性 ：列表选择商品的所属类型
-- 商品类型：goods_type        mmc_goods_type
-
-
-商品相册 mmc_goods_gallery
-- goods_id
-- img_url
-- img_desc
-- thumb_url
-- img_original
-
-关联商品：  table：mmc_link_goods
-- goods_id
-- link_goods_id
-- is_double
-- admin_id
-
-配件：table: mmc_group_goods
-- parent_id      父类ID：本商品goods_id
-- goods_id       配件商品ID：mmc_goods
-- goods_price    配件价格
-- admin_id
-</code></pre><p>add_goods_article  goodsId<br>drop_goods_article  goodsId</p>
+</code></pre><ul>
+<li>商品名称:goods_name<br>mmc_goods</li>
+<li>商品货号:goods_sn</li>
+<li><p>商品分类:cat_id </p>
+<p>  mmc_catgory  </p>
+<p>  HOST：<em>URL</em>/admin/category/menuCategory</p>
+</li>
+<li><a href="扩展分类">扩展分类del</a></li>
+<li><p>商品品牌:brand_id</p>
+<p>  mmc_brand </p>
+<p>  HOST：<em>URL</em>/admin/brand/menuBrand</p>
+</li>
+<li>本店售价：shop_price</li>
+<li>市场售价：market_price</li>
+<li>上传商品图片:goods_img</li>
+<li>上传商品缩略图：goods_thumb</li>
+</ul>
+<p>详细描述</p>
+<ul>
+<li>详细描述：goods_desc</li>
+</ul>
+<p>其他信息</p>
+<ul>
+<li>商品重量：goods_weight      两位小数</li>
+<li>商品库存数量：goods_number</li>
+<li><a href="库存警告数量：warn_number">库存警告数量del</a></li>
+<li><p>加入推荐：<br>  is_best  精品</p>
+<p>  is_new   新品</p>
+<p>  is_hot   热销  </p>
+</li>
+<li><p><a href="is_alone_sale">能作为普通商品销售del</a></p>
+</li>
+<li><p><a href="is_shipping">是否为免运费商品del</a></p>
+</li>
+<li><p>上架:is_on_sale</p>
+</li>
+<li>商品关键词：keywords</li>
+<li>商品简单描述: goods_brief</li>
+<li>商家备注：seller_note</li>
+</ul>
+<p>商品属性 ：列表选择商品的所属类型</p>
+<ul>
+<li><p>商品类型：goods_type </p>
+<p>  mmc_goods_type</p>
+<p>  HOST：<em>URL</em>/admin/goodstype/menuGoodstype</p>
+</li>
+</ul>
+<p>商品相册 mmc_goods_gallery</p>
+<ul>
+<li>goods_id</li>
+<li>img_url</li>
+<li>img_desc</li>
+<li>thumb_url</li>
+<li>img_original</li>
+</ul>
+<p>关联商品：  table：mmc_link_goods</p>
+<ul>
+<li>goods_id</li>
+<li>link_goods_id</li>
+<li>is_double</li>
+<li>admin_id</li>
+</ul>
+<p>配件：table: mmc_group_goods</p>
+<ul>
+<li>parent_id      父类ID：本商品goods_id</li>
+<li>goods_id       配件商品ID：mmc_goods</li>
+<li>goods_price    配件价格</li>
+<li>admin_id</li>
+</ul>
+<p>add_goods_article  goodsId<br>drop_goods_article  goodsId</p>
 <h2 id="商品品牌"><a href="#商品品牌" class="headerlink" title="商品品牌"></a>商品品牌</h2><p>商品品牌：mmc_brand</p>
 <h3 id="商品品牌菜单"><a href="#商品品牌菜单" class="headerlink" title="商品品牌菜单"></a>商品品牌菜单</h3><blockquote>
 <p>HOST：<em>URL</em>/admin/brand/menuBrand</p>
