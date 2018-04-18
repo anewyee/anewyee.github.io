@@ -337,7 +337,20 @@
 </ul>
 </blockquote>
 <h4 id="备用"><a href="#备用" class="headerlink" title="备用"></a>备用</h4><p>add_goods_article  goodsId<br>drop_goods_article  goodsId</p>
-<h3 id="添加商品"><a href="#添加商品" class="headerlink" title="添加商品"></a>添加商品</h3><p>权限：goods_manage</p>
+<h3 id="添加商品按钮"><a href="#添加商品按钮" class="headerlink" title="添加商品按钮"></a>添加商品按钮</h3><p>这部分做初始化操作，目的是删除缓存的关联数据</p>
+<blockquote>
+<p>HOST：<em>URL</em>/admin/goods/goodsAddInit</p>
+</blockquote>
+<ul>
+<li>请求方式：POST</li>
+<li>参数</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void</span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回值</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void</span><br></pre></td></tr></table></figure>
+<h3 id="确定添加商品"><a href="#确定添加商品" class="headerlink" title="确定添加商品"></a>确定添加商品</h3><p>权限：goods_manage</p>
 <blockquote>
 <p>HOST：<em>URL</em>/admin/goods/goodsAdd</p>
 <ul>
@@ -536,6 +549,47 @@
 <li>返回值</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void</span><br></pre></td></tr></table></figure>
+<h3 id="关联商品页面搜索按钮"><a href="#关联商品页面搜索按钮" class="headerlink" title="关联商品页面搜索按钮"></a>关联商品页面搜索按钮</h3><blockquote>
+<p>HOST：<em>URL</em>/admin/goods/searchGoodsList</p>
+<ul>
+<li>请求方式：POST</li>
+<li>参数</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">* @param   string  filters  过滤条件</span><br><span class="line">*</span><br><span class="line">* filters.cat_id      int     分类ID</span><br><span class="line">* filters.brand_id    int     品牌ID</span><br><span class="line">* filters.keyword     string  关键字</span><br><span class="line">* filters.exclude     arry    商品ID数组     [goods_id]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">返回值列表：</span><br><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;goods_id&quot;: &quot;1&quot;,</span><br><span class="line">        &quot;goods_name&quot;: &quot;MC6-1550&quot;,</span><br><span class="line">        &quot;shop_price&quot;: &quot;1000000.00&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;goods_id&quot;: &quot;2&quot;,</span><br><span class="line">        &quot;goods_name&quot;: &quot;MC6-1200&quot;,</span><br><span class="line">        &quot;shop_price&quot;: &quot;120000.00&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;goods_id&quot;: &quot;3&quot;,</span><br><span class="line">        &quot;goods_name&quot;: &quot;T80&quot;,</span><br><span class="line">        &quot;shop_price&quot;: &quot;0.00&quot;</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h3 id="关联商品页添加商品关联"><a href="#关联商品页添加商品关联" class="headerlink" title="关联商品页添加商品关联"></a>关联商品页添加商品关联</h3><p>此接口支持单产品绑定，支持多产品绑定。</p>
+<blockquote>
+<p>HOST：<em>URL</em>/admin/goods/addLinkGoods</p>
+<ul>
+<li>请求方式：POST</li>
+<li>参数</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">* @param   array   add_ids    要关联的商品ID  例子：[1,2,5]</span><br><span class="line">* @param   int     goods_id   操作的商品ID</span><br><span class="line">* @param   int     is_double  是否双向绑定    0：否；1：是</span><br><span class="line">* @param   string  session_id 用户session ID</span><br><span class="line">* @return  JSON [&#123;value&#125;,&#123;text&#125;,&#123;data&#125;]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回值</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        "value": "1",</span><br><span class="line">        "text": "MC6-1550 -- [单向关联]",</span><br><span class="line">        "data": ""</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        "value": "2",</span><br><span class="line">        "text": "MC6-1200 -- [单向关联]",</span><br><span class="line">        "data": ""</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h3 id="关联商品页删除商品关联"><a href="#关联商品页删除商品关联" class="headerlink" title="关联商品页删除商品关联"></a>关联商品页删除商品关联</h3><p>此接口支持单产品删除，支持多产品删除。</p>
+<blockquote>
+<p>HOST：<em>URL</em>/admin/goods/dropLinkGoods</p>
+<ul>
+<li>请求方式：POST</li>
+<li>参数</li>
+</ul>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">* @detail 支持多商品一次性删除</span><br><span class="line">* @param   array   drop_ids    要删除关联的商品ID  例子：[1,2,5]</span><br><span class="line">* @param   int     goods_id   操作的商品ID</span><br><span class="line">* @param   int     is_double  是否双向绑定    0：否；1：是</span><br><span class="line">* @param   string  session_id 用户session ID</span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回值</li>
+</ul>
+<ul>
+<li>@return  JSON [{value},{text},{data}]</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        "value": "1",</span><br><span class="line">        "text": "MC6-1550 -- [单向关联]",</span><br><span class="line">        "data": ""</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        "value": "2",</span><br><span class="line">        "text": "MC6-1200 -- [单向关联]",</span><br><span class="line">        "data": ""</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 <h3 id="商品审批操作日志表及状态显示"><a href="#商品审批操作日志表及状态显示" class="headerlink" title="商品审批操作日志表及状态显示"></a>商品审批操作日志表及状态显示</h3><p>数据表：mmc_approve_action </p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">action_id       mediumint 流水号</span><br><span class="line">goods_id        mediumint 被操作的商品ID</span><br><span class="line">action_user     varchar   操作该次的人员</span><br><span class="line">test_status     tinyint   测试状态。0，未确认；1，已确认；</span><br><span class="line">finance_status  tinyint   财务状态。0，未定价；1，已定价；</span><br><span class="line">lab_status      tinyint   实验室审批状态。0，未审批; 1，已审批;</span><br><span class="line">goods_status    tinyint   商品状态。0，未上架；1，已上架；2，预研项目；3，取消（红色）；4，已提交；</span><br><span class="line">action_note     varchar   操作备注</span><br><span class="line">log_time        int       操作时间</span><br></pre></td></tr></table></figure>
 <h2 id="商品数据管理"><a href="#商品数据管理" class="headerlink" title="商品数据管理"></a>商品数据管理</h2><p>主要数据表介绍：</p>
