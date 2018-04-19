@@ -1,0 +1,503 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>无人机数据接口 | MMC Helper</title>
+  <meta name="author" content="MMC">
+  
+  <meta name="description" content="MicroMultiCopter Aero Technology Co., Ltd">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="无人机数据接口"/>
+  <meta property="og:site_name" content="MMC Helper"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="MMC Helper" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">MMC Helper</a><span class="split"></span><span class="title">无人机数据接口</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2018-04-19</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  <div class="col-xs-12 col-sm-3 col-md-3 toc"> 
+	<!-- toc -->
+<script type="text/javascript">
+		jQuery(document).ready(function() {
+ 		   generateWikiTOC('.note', '.toc',  2 , 2 );
+		});
+</script>
+  </div><!-- col-md-3 -->
+  
+  
+
+  
+  <div class="col-xs-12 col-sm-9 col-md-9 note">
+	
+
+	  <!-- content -->
+	  <p>[toc]</p>
+<p>##1. 团队管理接口 </p>
+<pre><code>请求地址：http://www.testmmc.top/mmcserver/Home/Team/
+</code></pre><hr>
+<h2 id="1-1-创建团队"><a href="#1-1-创建团队" class="headerlink" title="####1.1 创建团队"></a>####1.1 创建团队</h2><h2 id="方法名-createTeam"><a href="#方法名-createTeam" class="headerlink" title="######方法名:createTeam"></a>######方法名:createTeam</h2><h2 id="请求方式：GET"><a href="#请求方式：GET" class="headerlink" title="######请求方式：GET"></a>######请求方式：GET</h2><p>######请求参数:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">是否必填</th>
+<th>最大长度</th>
+<th>描述</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">username</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">是</td>
+<td>30</td>
+<td>用户名</td>
+<td>mmc123456</td>
+</tr>
+<tr>
+<td style="text-align:center">team_name</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">是</td>
+<td>30</td>
+<td>团队名</td>
+<td>XX组织</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>######响应参数：<br>|参数|类型|描述|<br>|:—:|:—:|:—:|<br>|status|int|消息号|</p>
+<h2 id="message-string-消息提示"><a href="#message-string-消息提示" class="headerlink" title="|message|string|消息提示|"></a>|message|string|消息提示|</h2><pre><code>status参数说明
+</code></pre><table>
+<thead>
+<tr>
+<th style="text-align:center">status</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">100</td>
+<td style="text-align:center">添加成功</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">添加失败，没有权限</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">添加失败，团队名已存在</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="1-2-邀请成员"><a href="#1-2-邀请成员" class="headerlink" title="####1.2 邀请成员"></a>####1.2 邀请成员</h2><p>######方法名：inviteMember</p>
+<h2 id="请求方式：POST"><a href="#请求方式：POST" class="headerlink" title="######请求方式：POST"></a>######请求方式：POST</h2><p>######请求参数:<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|<br>|username|string|是|30|用户名|mmc123456|<br>|dstName|string|是|30|被邀请者用户名|test123456|<br>|teamName|string|是|30|团队名|XX组织|<br>|permission|int|是|30|给被邀请者分配的角色，权限|2|</p>
+<pre><code>permission参数权限分配说明
+</code></pre><table>
+<thead>
+<tr>
+<th style="text-align:center">permission</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">飞手</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">指挥中心监控人员</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>######响应参数：<br>|参数|类型|描述|<br>|:—:|:—:|:—:|<br>|status|int|消息号|<br>|message|string|消息提示|</p>
+<pre><code>status参数说明
+</code></pre><table>
+<thead>
+<tr>
+<th style="text-align:center">status</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">100</td>
+<td style="text-align:center">邀请已经发出</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">没有邀请权限</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">被邀请者不存在，或已加入其他团队</td>
+</tr>
+</tbody>
+</table>
+<p>####1.3 邀请扩展用户</p>
+<h2 id="方法名-inviteExtendUser"><a href="#方法名-inviteExtendUser" class="headerlink" title="######方法名:inviteExtendUser"></a>######方法名:inviteExtendUser</h2><h2 id="请求方式：POST-1"><a href="#请求方式：POST-1" class="headerlink" title="######请求方式：POST"></a>######请求方式：POST</h2><p>######请求参数:<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|<br>|username|string|是|30|用户名|mmc123456|</p>
+<h2 id="dstName-string-是-30-被邀请者用户名-test123456"><a href="#dstName-string-是-30-被邀请者用户名-test123456" class="headerlink" title="|dstName|string|是|30|被邀请者用户名|test123456|"></a>|dstName|string|是|30|被邀请者用户名|test123456|</h2><p>######响应参数：<br>|参数|类型|描述|<br>|:—:|:—:|:—:|<br>|status|int|消息号|<br>|message|string|消息提示|</p>
+<pre><code>status参数说明
+</code></pre><table>
+<thead>
+<tr>
+<th style="text-align:center">status</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">100</td>
+<td style="text-align:center">邀请已经发出</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">没有邀请权限</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">只能邀请管理员作为扩展</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>####1.4 查询当前用户的团队信息</p>
+<h2 id="方法名-getTeamInfo"><a href="#方法名-getTeamInfo" class="headerlink" title="######方法名:getTeamInfo"></a>######方法名:getTeamInfo</h2><h2 id="请求方式：GET-1"><a href="#请求方式：GET-1" class="headerlink" title="######请求方式：GET"></a>######请求方式：GET</h2><p>######请求参数:<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|</p>
+<h2 id="username-string-是-30-用户名-mmc123456"><a href="#username-string-是-30-用户名-mmc123456" class="headerlink" title="|username|string|是|30|用户名|mmc123456|"></a>|username|string|是|30|用户名|mmc123456|</h2><p>######响应参数：JSON 格式字符串<br>    {<br>        “username”: “admin”,  当前用户名<br>        “team_name”: “china”, 团队名<br>        “permission”: “0”,    权限，0为管理员，2为队员，3为飞手<br>        “subordinate”: [      当前用户的扩展（即下级）用户列表<br>            “1213”,<br>            “fight123456”,<br>            “mmc123456”<br>        ],<br>        “member”: [          当前团队的成员列表<br>            {<br>                “username”: “mmc123456”,<br>                “permission”: “2”<br>            },<br>            {<br>                “username”: “admin”,<br>                “permission”: “0”<br>            }<br>        ],<br>    }</p>
+<hr>
+<p>##2. 用户注册、登录接口<br>    请求地址<a href="http://www.testmmc.top/mmcserver/Home/Public/" target="_blank" rel="noopener">http://www.testmmc.top/mmcserver/Home/Public/</a></p>
+<p>####2.1 注册用户</p>
+<h2 id="方法名-checkRegister"><a href="#方法名-checkRegister" class="headerlink" title="######方法名:checkRegister"></a>######方法名:checkRegister</h2><h2 id="请求方式-POST"><a href="#请求方式-POST" class="headerlink" title="######请求方式:POST"></a>######请求方式:POST</h2><p>######请求参数：<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|<br>|code|string|是|30|验证码|1234|<br>|username|string|是|30|用户名|mmc123456|<br>|password|string|是|30|md5加密后的密码|<strong><strong>***</strong></strong>|</p>
+<h2 id="phone-number-string-是-手机号-15123114251"><a href="#phone-number-string-是-手机号-15123114251" class="headerlink" title="|phone_number|string|是||手机号|15123114251|"></a>|phone_number|string|是||手机号|15123114251|</h2><p>######响应参数：<br>|参数|类型|描述|<br>|:—:|:—:|:—:|<br>|status|int|消息号|<br>|message|string|消息提示|</p>
+<p>######status参数说明<br>|status|描述|<br>|:—:|:—:|<br>|100|注册成功|<br>|1|验证码错误|<br>|2|用户名已经存在|<br>|3|手机号已存在|</p>
+<p>####2.2 登录</p>
+<h2 id="方法名-checkLogin"><a href="#方法名-checkLogin" class="headerlink" title="######方法名:checkLogin"></a>######方法名:checkLogin</h2><h2 id="请求方式-POST-1"><a href="#请求方式-POST-1" class="headerlink" title="######请求方式:POST"></a>######请求方式:POST</h2><p>######请求参数：<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|<br>|code|string|是|30|验证码|1234|<br>|username|string|是|30|用户名|mmc123456|</p>
+<h2 id="password-string-是-30-md5加密后的密码"><a href="#password-string-是-30-md5加密后的密码" class="headerlink" title="|password|string|是|30|md5加密后的密码|***|"></a>|password|string|是|30|md5加密后的密码|<strong><strong>***</strong></strong>|</h2><p>######响应参数：<br>|参数|类型|描述|<br>|:—:|:—:|:—:|<br>|status|int|消息号|<br>|message|string|消息提示|</p>
+<p>######status参数说明<br>|status|描述|<br>|:—:|:—:|<br>|100|登录成功|<br>|1|验证码错误|<br>|2|用户名不存在|</p>
+<h2 id="3-密码错误"><a href="#3-密码错误" class="headerlink" title="|3|密码错误|"></a>|3|密码错误|</h2><p>####2.3 获取短信验证码</p>
+<h2 id="方法名-getCode"><a href="#方法名-getCode" class="headerlink" title="######方法名:getCode"></a>######方法名:getCode</h2><h2 id="请求方式-POST-2"><a href="#请求方式-POST-2" class="headerlink" title="######请求方式:POST"></a>######请求方式:POST</h2><p>######请求参数：<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|</p>
+<h2 id="phone-number-string-是-手机号"><a href="#phone-number-string-是-手机号" class="headerlink" title="|phone_number|string|是||手机号||"></a>|phone_number|string|是||手机号||</h2><p>######响应参数：<br>|参数|类型|描述|<br>|:—:|:—:|:—:|<br>|status|int|消息号|<br>|message|string|消息提示|</p>
+<p>######status参数说明<br>|status|描述|<br>|:—:|:—:|<br>|100|短信发送成功|<br>|1|发送失败，手机号错误|<br>|2|发送失败，触发流控，1分钟只能发一条|</p>
+<h2 id="3-发送失败，请重试！"><a href="#3-发送失败，请重试！" class="headerlink" title="|3|发送失败，请重试！|"></a>|3|发送失败，请重试！|</h2><p>####2.4 验证身份</p>
+<h2 id="方法名-checkId"><a href="#方法名-checkId" class="headerlink" title="######方法名:checkId"></a>######方法名:checkId</h2><h2 id="请求方式-POST-3"><a href="#请求方式-POST-3" class="headerlink" title="######请求方式:POST"></a>######请求方式:POST</h2><p>######请求参数：<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|<br>|phone_number|string|是||手机号||</p>
+<h2 id="code-string-是-验证码"><a href="#code-string-是-验证码" class="headerlink" title="|code|string|是||验证码||"></a>|code|string|是||验证码||</h2><p>######响应参数：<br>|参数|类型|描述|<br>|:—:|:—:|:—:|<br>|status|int|消息号|</p>
+<h2 id="message-string-消息提示-1"><a href="#message-string-消息提示-1" class="headerlink" title="|message|string|消息提示|"></a>|message|string|消息提示|</h2><p>######status参数说明<br>|status|描述|<br>|:—:|:—:|<br>|100|验证通过|<br>|1|验证码错误|<br>|2|手机号未注册|</p>
+<hr>
+<p>####2.5 更新密码</p>
+<h2 id="方法名-updatePassword"><a href="#方法名-updatePassword" class="headerlink" title="######方法名:updatePassword"></a>######方法名:updatePassword</h2><h2 id="请求方式-POST-4"><a href="#请求方式-POST-4" class="headerlink" title="######请求方式:POST"></a>######请求方式:POST</h2><p>######请求参数：<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|<br>|phone_number|string|是||手机号||<br>|password|string|是||md5加密之后的新密码||</p>
+<hr>
+<p>######响应参数：<br>|参数|类型|描述|<br>|:—:|:—:|:—:|<br>|status|int|消息号|<br>|message|string|消息提示|</p>
+<p>######status参数说明<br>|status|描述|<br>|:—:|:—:|<br>|100|密码更新成功|<br>|1|身份未验证|<br>|2|手机号未注册|<br>|3|更新失败|</p>
+<hr>
+<p>####2.6 注销</p>
+<h2 id="方法名-logout"><a href="#方法名-logout" class="headerlink" title="######方法名:logout"></a>######方法名:logout</h2><h2 id="请求方式-GET"><a href="#请求方式-GET" class="headerlink" title="######请求方式:GET"></a>######请求方式:GET</h2><p>######请求参数：<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|<br>|username|string|是||用户名||</p>
+<hr>
+<p>######响应参数：<br>|参数|类型|描述|<br>|:—:|:—:|:—:|<br>|status|int|消息号|<br>|message|string|消息提示|</p>
+<p>######status参数说明<br>|status|描述|<br>|:—:|:—:|<br>|100|退出成功|</p>
+<hr>
+<p>####2.7 判断是否已经登录</p>
+<h2 id="方法名-login"><a href="#方法名-login" class="headerlink" title="######方法名:login"></a>######方法名:login</h2><h2 id="请求方式-POST-5"><a href="#请求方式-POST-5" class="headerlink" title="######请求方式:POST"></a>######请求方式:POST</h2><p>######请求参数：<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|<br>|username|string|是||用户名||</p>
+<hr>
+<p>######响应参数：<br>|参数|类型|描述|<br>|:—:|:—:|:—:|<br>|status|int|消息号|<br>|message|string|消息提示|</p>
+<p>######status参数说明<br>|status|描述|<br>|:—:|:—:|<br>|100|用户已经登录过|</p>
+<h2 id="0-用户未登录"><a href="#0-用户未登录" class="headerlink" title="|0|用户未登录|"></a>|0|用户未登录|</h2><p>##3. 消息管理接口：<br>    请求地址：<a href="http://www.testmmc.top/mmcserver/Home/Message/" target="_blank" rel="noopener">http://www.testmmc.top/mmcserver/Home/Message/</a></p>
+<p>####3.1 查询当前用户的消息列表，未读消息排在前面</p>
+<h2 id="方法名-getMessageList"><a href="#方法名-getMessageList" class="headerlink" title="######方法名:getMessageList"></a>######方法名:getMessageList</h2><h2 id="请求方式-GET-1"><a href="#请求方式-GET-1" class="headerlink" title="######请求方式:GET"></a>######请求方式:GET</h2><p>######请求参数：<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|<br>|language|int|是||语言|0|<br>|username|string|是|30|用户名|mmc123456|</p>
+<p>######language参数说明<br>|language|描述|<br>|:—:|:—:|<br>|0|中文|</p>
+<h2 id="1-英文"><a href="#1-英文" class="headerlink" title="|1|英文|"></a>|1|英文|</h2><p>######响应参数：<br>|参数|类型|描述|<br>|:—:|:—:|:—:|<br>|msg_id|int|消息id|<br>|msg_content_english |string|消息内容英文|<br>|msg_content_chinese |string|消息内容中文|<br>|msg_state |bool|消息状态|<br>|date |string|日期|<br>|time |string|时间|</p>
+<p>######msg_state参数说明<br>|msg_state|描述|<br>|:—:|:—:|<br>|0|未读|</p>
+<h2 id="1-已读"><a href="#1-已读" class="headerlink" title="|1|已读|"></a>|1|已读|</h2><p>####3.2 根据消息id,查询单条消息内容</p>
+<h2 id="方法名-getOneMessage"><a href="#方法名-getOneMessage" class="headerlink" title="######方法名:getOneMessage"></a>######方法名:getOneMessage</h2><h2 id="请求方式-GET-2"><a href="#请求方式-GET-2" class="headerlink" title="######请求方式:GET"></a>######请求方式:GET</h2><p>######请求参数：<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|<br>|language|int|是||语言|0|<br>|username|string|是|30|用户名|mmc123456|<br>|msg_id|int|是||消息id||</p>
+<p>######language参数说明<br>|language|描述|<br>|:—:|:—:|<br>|0|中文|<br>|1|英文|</p>
+<p>######响应参数：同getMessageList一致，不过只有单条消息</p>
+<hr>
+<p>###3.3 将单条消息状态置为已读</p>
+<h2 id="方法名-setOneMessage"><a href="#方法名-setOneMessage" class="headerlink" title="######方法名:setOneMessage"></a>######方法名:setOneMessage</h2><h2 id="请求方式：GET-2"><a href="#请求方式：GET-2" class="headerlink" title="######请求方式：GET"></a>######请求方式：GET</h2><p>######请求参数：<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|<br>|username|string|是|30|用户名|mmc123456|<br>|msg_id|int|是||消息id||</p>
+<p>######响应参数：<br>|参数|类型|描述|<br>|:—:|:—:|:—:|<br>|status|int|消息号|</p>
+<p>######msg_state参数说明<br>|status|描述|<br>|:—:|:—:|<br>|100|更新成功|</p>
+<hr>
+<p>####3.4 将所有消息状态置为已读</p>
+<h2 id="方法名-setOneMessage-1"><a href="#方法名-setOneMessage-1" class="headerlink" title="######方法名:setOneMessage"></a>######方法名:setOneMessage</h2><h2 id="请求方式：GET-3"><a href="#请求方式：GET-3" class="headerlink" title="######请求方式：GET"></a>######请求方式：GET</h2><p>######请求参数：<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|</p>
+<h2 id="username-string-是-30-用户名-mmc123456-1"><a href="#username-string-是-30-用户名-mmc123456-1" class="headerlink" title="|username|string|是|30|用户名|mmc123456|"></a>|username|string|是|30|用户名|mmc123456|</h2><p>######响应参数：<br>|参数|类型|描述|<br>|:—:|:—:|:—:|<br>|status|int|消息号|</p>
+<p>######msg_state参数说明<br>|status|描述|<br>|:—:|:—:|<br>|100|更新成功|</p>
+<hr>
+<p>####3.5 将批量消息置为已读</p>
+<h2 id="方法名-setMessage"><a href="#方法名-setMessage" class="headerlink" title="######方法名:setMessage"></a>######方法名:setMessage</h2><h2 id="请求方式：POST-2"><a href="#请求方式：POST-2" class="headerlink" title="######请求方式：POST"></a>######请求方式：POST</h2><p>######请求参数：<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|<br>|username|string|是|30|用户名|mmc123456|</p>
+<h2 id="msg-id-list-int-array-是-消息id列表"><a href="#msg-id-list-int-array-是-消息id列表" class="headerlink" title="|msg_id_list|int array|是||消息id列表||"></a>|msg_id_list|int array|是||消息id列表||</h2><p>######响应参数：<br>|参数|类型|描述|<br>|:—:|:—:|:—:|<br>|status|int|消息号|</p>
+<p>######msg_state参数说明<br>|status|描述|<br>|:—:|:—:|</p>
+<h2 id="100-更新成功"><a href="#100-更新成功" class="headerlink" title="|100|更新成功|"></a>|100|更新成功|</h2><p>####3.6 批量删除消息</p>
+<h2 id="方法名-delMessage"><a href="#方法名-delMessage" class="headerlink" title="######方法名:delMessage"></a>######方法名:delMessage</h2><h2 id="请求方式：POST-3"><a href="#请求方式：POST-3" class="headerlink" title="######请求方式：POST"></a>######请求方式：POST</h2><p>######请求参数：<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|<br>|username|string|是|30|用户名|mmc123456|</p>
+<h2 id="msg-id-list-int-array-是-消息id列表-1"><a href="#msg-id-list-int-array-是-消息id列表-1" class="headerlink" title="|msg_id_list|int array|是||消息id列表||"></a>|msg_id_list|int array|是||消息id列表||</h2><p>######响应参数：<br>|参数|类型|描述|<br>|:—:|:—:|:—:|<br>|status|int|消息号|</p>
+<p>######msg_state参数说明<br>|status|描述|<br>|:—:|:—:|</p>
+<h2 id="100-删除成功"><a href="#100-删除成功" class="headerlink" title="|100|删除成功|"></a>|100|删除成功|</h2><p>##4. 无人机数据查询接口<br>    请求地址：<a href="http://www.testmmc.top/mmcserver/Home/Aircraft/" target="_blank" rel="noopener">http://www.testmmc.top/mmcserver/Home/Aircraft/</a></p>
+<p>####4.1 查询无人机列表</p>
+<h2 id="方法名：getListByUser"><a href="#方法名：getListByUser" class="headerlink" title="######方法名：getListByUser"></a>######方法名：getListByUser</h2><h2 id="请求方式：GET-4"><a href="#请求方式：GET-4" class="headerlink" title="######请求方式：GET"></a>######请求方式：GET</h2><p>######请求参数<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|</p>
+<h2 id="username-string-是-30-用户名-mmc123456-2"><a href="#username-string-是-30-用户名-mmc123456-2" class="headerlink" title="|username|string|是|30|用户名|mmc123456|"></a>|username|string|是|30|用户名|mmc123456|</h2><p>######响应参数：json字符串</p>
+<pre><code>{
+    &quot;username&quot;:&quot;admin&quot;,     #用户名
+    &quot;user_image&quot;:&quot;http://www.testmmc.top/mmcserver/Public/user_image/mmc.png&quot;,  #用户图像
+    &quot;aircraft_list&quot;: {        
+        &quot;MMC001&quot;: {
+            &quot;ground_serial&quot;: &quot;MMC001&quot;,    #地面站序列号
+            &quot;uav_type&quot; :&quot;MC6-1550&quot;,       #无人机型号
+            &quot;ground_state&quot;: &quot;1&quot;,          #地面站状态，0为离线，1为在线，2为维修中
+            &quot;camera_state&quot;: &quot;1&quot;           #视频流状态，0为无，1为有 
+        },
+        &quot;MMC002&quot;: {
+            &quot;ground_serial&quot;: &quot;MMC002&quot;,
+            &quot;uav_type&quot; :&quot;MC6-1550&quot;,
+            &quot;ground_state&quot;: &quot;0&quot;,
+            &quot;camera_state&quot;: &quot;0&quot;
+        }
+    }
+
+}
+</code></pre><hr>
+<p>####4.2  查询无人机设备基本信息</p>
+<h2 id="方法名：getDeviceInfo"><a href="#方法名：getDeviceInfo" class="headerlink" title="######方法名：getDeviceInfo"></a>######方法名：getDeviceInfo</h2><h2 id="请求方式：GET-5"><a href="#请求方式：GET-5" class="headerlink" title="######请求方式：GET"></a>######请求方式：GET</h2><p>######请求参数<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|</p>
+<h2 id="ground-serial-string-是-地面站序列号-MMC006"><a href="#ground-serial-string-是-地面站序列号-MMC006" class="headerlink" title="|ground_serial|string|是||地面站序列号|MMC006|"></a>|ground_serial|string|是||地面站序列号|MMC006|</h2><p>######响应参数：json字符串<br>    {<br>        ground_serial: “MMC001”,                           地面站序列号<br>        uav_type: “MC6-1550”,                              无人机型号统一代号<br>        uav_name: “1550系多旋翼无人机”,                      无人机型号中文名<br>        company: “深圳市科比特航空科技有限公司”,           设备生产商<br>        uav_kind: 6,                                      旋翼类型,六旋翼</p>
+<pre><code>}
+</code></pre><hr>
+<p>####4.3 查询单架无人机的数据</p>
+<h2 id="方法名：getDataBySerial"><a href="#方法名：getDataBySerial" class="headerlink" title="######方法名：getDataBySerial"></a>######方法名：getDataBySerial</h2><h2 id="请求方式：GET-6"><a href="#请求方式：GET-6" class="headerlink" title="######请求方式：GET"></a>######请求方式：GET</h2><p>######请求参数<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|</p>
+<h2 id="ground-serial-string-是-地面站序列号-MMC006-1"><a href="#ground-serial-string-是-地面站序列号-MMC006-1" class="headerlink" title="|ground_serial|string|是||地面站序列号|MMC006|"></a>|ground_serial|string|是||地面站序列号|MMC006|</h2><p>######响应参数：json字符串</p>
+<pre><code>{
+    &quot;ground_serial&quot;: &quot;MMC001&quot;,                                             地面站序列号
+    &quot;uav_type&quot;: &quot;MC6-1200&quot;,                                                无人机型号
+    &quot;mount_type&quot;: &quot;20倍变焦&quot;,                                            挂载类型
+    &quot;longitude&quot;: 0,                                                        经度
+    &quot;latitude&quot;: 0,                                                         纬度
+    &quot;height&quot;: &quot;27.04&quot;,                                                     相对高度
+    &quot;speed&quot;: &quot;0&quot;,                                                          速度
+    &quot;climb_rate&quot;: &quot;0&quot;,                                                     爬升率
+    &quot;voltage&quot;: &quot;0.16&quot;,                                                     电池电压
+    &quot;distance_to_home&quot;: &quot;0&quot;,                                               离Home点距离
+    &quot;rtmp_url&quot;: &quot;rtmp://47.104.31.20:9000/live/test&quot;,                    视频流地址
+    &quot;time&quot;: &quot;02:10:01&quot;                                                     无人机数据上传时间
+}
+</code></pre><hr>
+<p>####4.4 查询单架无人机视频流地址</p>
+<h2 id="方法名：getVideoBySerial"><a href="#方法名：getVideoBySerial" class="headerlink" title="######方法名：getVideoBySerial"></a>######方法名：getVideoBySerial</h2><h2 id="请求方式：GET-7"><a href="#请求方式：GET-7" class="headerlink" title="######请求方式：GET"></a>######请求方式：GET</h2><p>######请求参数<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|</p>
+<h2 id="ground-serial-string-是-地面站序列号-MMC006-2"><a href="#ground-serial-string-是-地面站序列号-MMC006-2" class="headerlink" title="|ground_serial|string|是||地面站序列号|MMC006|"></a>|ground_serial|string|是||地面站序列号|MMC006|</h2><p>######响应参数：json字符串<br>    {<br>        “ground_serial”: “MMC001”, 地面站序列号<br>        “rtmp_url”: “”,            视频流地址<br>        “video_type”: “rtmp/flv”   视频流类型，默认为rtmp/flv<br>    }</p>
+<hr>
+<p>####4.5 查询单架无人机经纬度坐标</p>
+<h2 id="方法名：getPositionBySerial"><a href="#方法名：getPositionBySerial" class="headerlink" title="######方法名：getPositionBySerial"></a>######方法名：getPositionBySerial</h2><h2 id="请求方式：GET-8"><a href="#请求方式：GET-8" class="headerlink" title="######请求方式：GET"></a>######请求方式：GET</h2><p>######请求参数<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|</p>
+<h2 id="ground-serial-string-是-地面站序列号-MMC006-3"><a href="#ground-serial-string-是-地面站序列号-MMC006-3" class="headerlink" title="|ground_serial|string|是||地面站序列号|MMC006|"></a>|ground_serial|string|是||地面站序列号|MMC006|</h2><p>######响应参数：json字符串<br>    {<br>        “ground_serial”: “MMC001”, 地面站序列号<br>        “uav_type”: “MC6-1200”,  无人机型号<br>        “longitude”: 0,      经度<br>        “latitude”: 0        纬度<br>    }</p>
+<hr>
+<p>####4.6 查询各个状态的无人机总数</p>
+<h2 id="方法名：getUavCount"><a href="#方法名：getUavCount" class="headerlink" title="######方法名：getUavCount"></a>######方法名：getUavCount</h2><h2 id="请求方式：GET-9"><a href="#请求方式：GET-9" class="headerlink" title="######请求方式：GET"></a>######请求方式：GET</h2><p>######请求参数<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|</p>
+<h2 id="username-string-是-30-用户名-mmc123456-3"><a href="#username-string-是-30-用户名-mmc123456-3" class="headerlink" title="|username|string|是|30|用户名|mmc123456|"></a>|username|string|是|30|用户名|mmc123456|</h2><p>######响应参数：json字符串<br>    {<br>        “uav_count”:20       管理无人机总数<br>        “running_count”: 13, 运行中数目<br>        “resting_count”: 5,  休息中数目<br>        “repairing_count”: 2  维修中数目<br>    }</p>
+<hr>
+<p>####4.7 查询用户信息</p>
+<h2 id="方法名：getUserInfo"><a href="#方法名：getUserInfo" class="headerlink" title="######方法名：getUserInfo"></a>######方法名：getUserInfo</h2><h2 id="请求方式：GET-10"><a href="#请求方式：GET-10" class="headerlink" title="######请求方式：GET"></a>######请求方式：GET</h2><p>######请求参数<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|</p>
+<h2 id="username-string-是-30-用户名-mmc123456-4"><a href="#username-string-是-30-用户名-mmc123456-4" class="headerlink" title="|username|string|是|30|用户名|mmc123456|"></a>|username|string|是|30|用户名|mmc123456|</h2><p>######响应参数：json字符串<br>    {<br>        “username”:mmc123456<br>        “user_image”:”<a href="http://www.testmmc.top/mmcserver/Public/user_image/mmc.png&quot;" target="_blank" rel="noopener">http://www.testmmc.top/mmcserver/Public/user_image/mmc.png&quot;</a>,  用户图像<br>        “last_login_time”: “2018-04-10”,     上次登录时间<br>        “last_login_ip”: “127.0.0.1”,        上次登录ip<br>        “login_count”:500,                   累计登录总次数<br>        “today_login_count”:10               今日登录次数<br>    }</p>
+<hr>
+<p>####4.8 添加无人机</p>
+<h2 id="方法名：addUav"><a href="#方法名：addUav" class="headerlink" title="######方法名：addUav"></a>######方法名：addUav</h2><h2 id="请求方式：GET-11"><a href="#请求方式：GET-11" class="headerlink" title="######请求方式：GET"></a>######请求方式：GET</h2><p>######请求参数<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|<br>|username|string|是|30|用户名|mmc123456|</p>
+<h2 id="ground-serial-string-是-地面站序列号-MMC0000001"><a href="#ground-serial-string-是-地面站序列号-MMC0000001" class="headerlink" title="|ground_serial|string|是||地面站序列号|MMC0000001|"></a>|ground_serial|string|是||地面站序列号|MMC0000001|</h2><p>######响应参数：<br>|参数|类型|描述|<br>|:—:|:—:|:—:|<br>|status|int|消息号|<br>|message|string|消息提示|</p>
+<p>######status参数说明<br>|status|描述|<br>|:—:|:—:|<br>|100|添加成功|<br>|1|添加失败，没有权限|</p>
+<h2 id="2-添加失败，地面站序列号错误"><a href="#2-添加失败，地面站序列号错误" class="headerlink" title="|2|添加失败，地面站序列号错误"></a>|2|添加失败，地面站序列号错误</h2><p>####4.9 删除无人机</p>
+<h2 id="方法名：addUav-1"><a href="#方法名：addUav-1" class="headerlink" title="######方法名：addUav"></a>######方法名：addUav</h2><h2 id="请求方式：GET-12"><a href="#请求方式：GET-12" class="headerlink" title="######请求方式：GET"></a>######请求方式：GET</h2><p>######请求参数<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|<br>|username|string|是|30|用户名|mmc123456|</p>
+<h2 id="ground-serial-string-是-地面站序列号-MMC0000001-1"><a href="#ground-serial-string-是-地面站序列号-MMC0000001-1" class="headerlink" title="|ground_serial|string|是||地面站序列号|MMC0000001|"></a>|ground_serial|string|是||地面站序列号|MMC0000001|</h2><p>######响应参数：<br>|参数|类型|描述|<br>|:—:|:—:|:—:|<br>|status|int|消息号|<br>|message|string|消息提示|</p>
+<p>######status值说明<br>|status|描述|<br>|:—:|:—:|<br>|100|删除成功|<br>|1|删除失败，没有权限|</p>
+<h2 id="2-删除失败，地面站序列号错误"><a href="#2-删除失败，地面站序列号错误" class="headerlink" title="|2|删除失败，地面站序列号错误"></a>|2|删除失败，地面站序列号错误</h2><p>####4.10 查询在线(运行中)无人机列表</p>
+<h2 id="方法名：getRunningListByUser"><a href="#方法名：getRunningListByUser" class="headerlink" title="######方法名：getRunningListByUser"></a>######方法名：getRunningListByUser</h2><h2 id="请求方式：GET-13"><a href="#请求方式：GET-13" class="headerlink" title="######请求方式：GET"></a>######请求方式：GET</h2><p>######请求参数<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|</p>
+<h2 id="username-string-是-30-用户名-mmc123456-5"><a href="#username-string-是-30-用户名-mmc123456-5" class="headerlink" title="|username|string|是|30|用户名|mmc123456|"></a>|username|string|是|30|用户名|mmc123456|</h2><p>######响应参数：json字符串<br>    {<br>        “username”:”mmc123456”,     #用户名<br>        “aircraft_list”: {<br>            “MMC001”: {<br>                “ground_serial”: “MMC001”,                #地面站序列号<br>                “uav_type” :”MC6-1550”,                   #无人机型号<br>                “uav_name”: “1550系多旋翼无人机”,          #无人机型号对应中文名<br>                “mount_type”: “20倍变焦”,                 #挂载名称<br>                “add_time”:”2018-04-10”                  #添加时间<br>                “username”：mmc123456                    #添加人用户名<br>            },<br>            “MMC002”: {<br>                “ground_serial”: “MMC002”,                #地面站序列号<br>                “uav_type” :”MC6-1550”,                   #无人机型号<br>                “uav_name”: “1550系多旋翼无人机”,          #无人机型号对应中文名<br>                “mount_type”: “20倍变焦”,                 #挂载名称<br>                “add_time”:”2018-04-10”                  #添加时间<br>                “username”：mmc123456<br>            }<br>        }<br>    }</p>
+<hr>
+<p>####4.11 查询离线(休息中)无人机列表</p>
+<h2 id="方法名：getRestingListByUser"><a href="#方法名：getRestingListByUser" class="headerlink" title="######方法名：getRestingListByUser"></a>######方法名：getRestingListByUser</h2><h2 id="请求方式：GET-14"><a href="#请求方式：GET-14" class="headerlink" title="######请求方式：GET"></a>######请求方式：GET</h2><p>######请求参数<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|</p>
+<h2 id="username-string-是-30-用户名-mmc123456-6"><a href="#username-string-是-30-用户名-mmc123456-6" class="headerlink" title="|username|string|是|30|用户名|mmc123456|"></a>|username|string|是|30|用户名|mmc123456|</h2><p>######响应参数：json字符串<br>    {<br>        “username”:”mmc123456”,     #用户名<br>        “aircraft_list”: {<br>            “MMC001”: {<br>                “ground_serial”: “MMC001”,                #地面站序列号<br>                “uav_type” :”MC6-1550”,                   #无人机型号<br>                “uav_name”: “1550系多旋翼无人机”,          #无人机型号对应中文名<br>                “mount_type”: “20倍变焦”,                 #挂载名称<br>                “add_time”:”2018-04-10”                  #添加时间<br>                “username”：mmc123456                    #添加人用户名<br>            },<br>            “MMC002”: {<br>                “ground_serial”: “MMC002”,                #地面站序列号<br>                “uav_type” :”MC6-1550”,                   #无人机型号<br>                “uav_name”: “1550系多旋翼无人机”,          #无人机型号对应中文名<br>                “mount_type”: “20倍变焦”,                 #挂载名称<br>                “add_time”:”2018-04-10”                  #添加时间<br>                “username”：mmc123456                    #<br>            }<br>        }<br>    }</p>
+<hr>
+<p>####4.12 查询维修中无人机列表</p>
+<h2 id="方法名：getRestingListByUser-1"><a href="#方法名：getRestingListByUser-1" class="headerlink" title="######方法名：getRestingListByUser"></a>######方法名：getRestingListByUser</h2><h2 id="请求方式：GET-15"><a href="#请求方式：GET-15" class="headerlink" title="######请求方式：GET"></a>######请求方式：GET</h2><p>######请求参数<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|</p>
+<h2 id="username-string-是-30-用户名-mmc123456-7"><a href="#username-string-是-30-用户名-mmc123456-7" class="headerlink" title="|username|string|是|30|用户名|mmc123456|"></a>|username|string|是|30|用户名|mmc123456|</h2><p>######响应参数：json字符串<br>    {<br>        “username”:”mmc123456”,     #用户名<br>        “aircraft_list”: {<br>            “MMC001”: {<br>                “ground_serial”: “MMC001”,                #地面站序列号<br>                “uav_type” :”MC6-1550”,                   #无人机型号<br>                “uav_name”: “1550系多旋翼无人机”,          #无人机型号对应中文名<br>                “mount_type”: “20倍变焦”,                 #挂载名称<br>                “add_time”:”2018-04-10”                  #添加时间<br>                “username”：mmc123456                    #添加人用户名<br>            },<br>            “MMC002”: {<br>                “ground_serial”: “MMC002”,                #地面站序列号<br>                “uav_type” :”MC6-1550”,                   #无人机型号<br>                “uav_name”: “1550系多旋翼无人机”,          #无人机型号对应中文名<br>                “mount_type”: “20倍变焦”,                 #挂载名称<br>                “add_time”:”2018-04-10”                  #添加时间<br>                “username”：mmc123456                    #<br>            }<br>        }<br>    }</p>
+<hr>
+<p>####4.13 查询回收站中无人机列表</p>
+<h2 id="方法名：getRecycledListByUser"><a href="#方法名：getRecycledListByUser" class="headerlink" title="######方法名：getRecycledListByUser"></a>######方法名：getRecycledListByUser</h2><h2 id="请求方式：GET-16"><a href="#请求方式：GET-16" class="headerlink" title="######请求方式：GET"></a>######请求方式：GET</h2><p>######请求参数<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|</p>
+<h2 id="username-string-是-30-用户名-mmc123456-8"><a href="#username-string-是-30-用户名-mmc123456-8" class="headerlink" title="|username|string|是|30|用户名|mmc123456|"></a>|username|string|是|30|用户名|mmc123456|</h2><p>######响应参数：json字符串<br>    {<br>        “username”:”mmc123456”,     #用户名<br>        “aircraft_list”: {<br>            “MMC001”: {<br>                “ground_serial”: “MMC001”,                #地面站序列号<br>                “uav_type” :”MC6-1550”,                   #无人机型号<br>                “uav_name”: “1550系多旋翼无人机”,          #无人机型号对应中文名<br>                “mount_type”: “20倍变焦”,                 #挂载名称<br>                “add_time”:”2018-04-10”                  #添加时间<br>                “username”：mmc123456                    #添加人用户名<br>            },<br>            “MMC002”: {<br>                “ground_serial”: “MMC002”,                #地面站序列号<br>                “uav_type” :”MC6-1550”,                   #无人机型号<br>                “uav_name”: “1550系多旋翼无人机”,          #无人机型号对应中文名<br>                “mount_type”: “20倍变焦”,                 #挂载名称<br>                “add_time”:”2018-04-10”                  #添加时间<br>                “username”：mmc123456                    #<br>            }<br>        }<br>    }</p>
+<hr>
+<p>####4.14 根据无人机型号筛选无人机列表</p>
+<h2 id="方法名：getListByUavType"><a href="#方法名：getListByUavType" class="headerlink" title="######方法名：getListByUavType"></a>######方法名：getListByUavType</h2><h2 id="请求方式：GET-17"><a href="#请求方式：GET-17" class="headerlink" title="######请求方式：GET"></a>######请求方式：GET</h2><p>######请求参数<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|<br>|username|string|是|30|用户名|mmc123456|</p>
+<h2 id="uav-type-string-是-无人机型号-MC6-1550"><a href="#uav-type-string-是-无人机型号-MC6-1550" class="headerlink" title="|uav_type|string|是||无人机型号|MC6-1550|"></a>|uav_type|string|是||无人机型号|MC6-1550|</h2><p>######响应参数：json字符串<br>    {<br>        “username”:”mmc123456”,     #用户名<br>        “aircraft_list”: {<br>            “MMC001”: {<br>                “ground_serial”: “MMC001”,    #地面站序列号<br>                “uav_type” :”MC6-1550”,       #无人机型号<br>                “ground_state”: “1”,          #地面站状态，0为离线，1为在线,2为维修中<br>                “camera_state”: “1”           #视频流状态，0为无，1为有<br>            },<br>            “MMC002”: {<br>                “ground_serial”: “MMC001”,    #地面站序列号<br>                “uav_type” :”MC6-1550”,       #无人机型号<br>                “ground_state”: “1”,          #地面站状态，0为离线，1为在线,2为维修中<br>                “camera_state”: “1”           #视频流状态，0为无，1为有<br>            }<br>        }</p>
+<pre><code>}
+</code></pre><hr>
+<p>####4.15 根据无人机状态筛选无人机列表</p>
+<h2 id="方法名：getListByGroundState"><a href="#方法名：getListByGroundState" class="headerlink" title="######方法名：getListByGroundState"></a>######方法名：getListByGroundState</h2><h2 id="请求方式：GET-18"><a href="#请求方式：GET-18" class="headerlink" title="######请求方式：GET"></a>######请求方式：GET</h2><p>######请求参数<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|<br>|username|string|是|30|用户名|mmc123456|</p>
+<h2 id="ground-state-string-是-地面站状态-1"><a href="#ground-state-string-是-地面站状态-1" class="headerlink" title="|ground_state|string|是||地面站状态|1|"></a>|ground_state|string|是||地面站状态|1|</h2><p>######响应参数：json字符串<br>    {<br>        “username”:”mmc123456”,     #用户名<br>        “aircraft_list”: {<br>            “MMC001”: {<br>                “ground_serial”: “MMC001”,    #地面站序列号<br>                “uav_type” :”MC6-1550”,       #无人机型号<br>                “ground_state”: “1”,          #地面站状态，0为离线，1为在线,2为维修中<br>                “camera_state”: “1”           #视频流状态，0为无，1为有<br>            },<br>            “MMC002”: {<br>                “ground_serial”: “MMC002”,    #地面站序列号<br>                “uav_type” :”MC6-1550”,       #无人机型号<br>                “ground_state”: “1”,          #地面站状态，0为离线，1为在线,2为维修中<br>                “camera_state”: “1”           #视频流状态，0为无，1为有<br>            }<br>        }<br>    }</p>
+<hr>
+<p>####4.16 根据挂载类型筛选无人机列表</p>
+<h2 id="方法名：getListByMountType"><a href="#方法名：getListByMountType" class="headerlink" title="######方法名：getListByMountType"></a>######方法名：getListByMountType</h2><h2 id="请求方式：GET-19"><a href="#请求方式：GET-19" class="headerlink" title="######请求方式：GET"></a>######请求方式：GET</h2><p>######请求参数<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|<br>|username|string|是|30|用户名|mmc123456|</p>
+<h2 id="mount-type-string-是-挂载类型-1"><a href="#mount-type-string-是-挂载类型-1" class="headerlink" title="|mount_type|string|是||挂载类型|1|"></a>|mount_type|string|是||挂载类型|1|</h2><p>######响应参数：json字符串<br>    {<br>        “username”:”mmc123456”,     #用户名<br>        “aircraft_list”: {<br>            “MMC001”: {<br>                “ground_serial”: “MMC001”,    #地面站序列号<br>                “uav_type” :”MC6-1550”,       #无人机型号<br>                “ground_state”: “1”,          #地面站状态，0为离线，1为在线,2为维修中<br>                “camera_state”: “1”           #视频流状态，0为无，1为有<br>            },<br>            “MMC002”: {<br>                “ground_serial”: “MMC002”,    #地面站序列号<br>                “uav_type” :”MC6-1550”,       #无人机型号<br>                “ground_state”: “1”,          #地面站状态，0为离线，1为在线,2为维修中<br>                “camera_state”: “1”           #视频流状态，0为无，1为有<br>            }<br>        }</p>
+<pre><code>}
+</code></pre><hr>
+<p>##5. 无人机历史查询与统计接口：</p>
+<pre><code>请求地址：http://www.testmmc.top/mmcserver/Home/History/
+</code></pre><hr>
+<p>####5.1 查询当天历史航迹</p>
+<h2 id="方法名：getTodayPosition"><a href="#方法名：getTodayPosition" class="headerlink" title="######方法名：getTodayPosition"></a>######方法名：getTodayPosition</h2><h2 id="请求方式：GET-20"><a href="#请求方式：GET-20" class="headerlink" title="######请求方式：GET"></a>######请求方式：GET</h2><p>######请求参数<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|</p>
+<h2 id="ground-serial-string-是-地面站序列号-MMC006-4"><a href="#ground-serial-string-是-地面站序列号-MMC006-4" class="headerlink" title="|ground_serial|string|是||地面站序列号|MMC006|"></a>|ground_serial|string|是||地面站序列号|MMC006|</h2><p>######响应参数：json字符串<br>    {<br>        “ground_serial”: “MMC001”,<br>        “position”: [<br>            {<br>                “longitude”: “0.00000000”,<br>                “latitude”: “0.00000000”<br>            },<br>            {<br>                “longitude”: “0.00000000”,<br>                “latitude”: “0.00000000”<br>            }<br>        ]<br>    }</p>
+<hr>
+<p>####5.2 查询历史某一天的航迹</p>
+<h2 id="方法名：getHistoryPosition"><a href="#方法名：getHistoryPosition" class="headerlink" title="######方法名：getHistoryPosition"></a>######方法名：getHistoryPosition</h2><h2 id="请求方式：GET-21"><a href="#请求方式：GET-21" class="headerlink" title="######请求方式：GET"></a>######请求方式：GET</h2><p>######请求参数<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|<br>|ground_serial|string|是||地面站序列号|MMC006|</p>
+<h2 id="date-string-是-日期-2018-04-10"><a href="#date-string-是-日期-2018-04-10" class="headerlink" title="|date|string|是||日期|2018-04-10|"></a>|date|string|是||日期|2018-04-10|</h2><h2 id="响应参数：json字符串，同getTodayPosition"><a href="#响应参数：json字符串，同getTodayPosition" class="headerlink" title="######响应参数：json字符串，同getTodayPosition"></a>######响应参数：json字符串，同getTodayPosition</h2><p>####5.3 查询当天视频点播地址</p>
+<h2 id="方法名：getTodayVideo"><a href="#方法名：getTodayVideo" class="headerlink" title="######方法名：getTodayVideo"></a>######方法名：getTodayVideo</h2><h2 id="请求方式：GET-22"><a href="#请求方式：GET-22" class="headerlink" title="######请求方式：GET"></a>######请求方式：GET</h2><p>######请求参数<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|</p>
+<h2 id="ground-serial-string-是-地面站序列号-MMC006-5"><a href="#ground-serial-string-是-地面站序列号-MMC006-5" class="headerlink" title="|ground_serial|string|是||地面站序列号|MMC006|"></a>|ground_serial|string|是||地面站序列号|MMC006|</h2><p>######响应参数：json字符串<br>    {<br>        “ground_serial”: “MMC001”,<br>        “video_url”: “rtmp://<a href="http://www.testmmc.top:9000/vod/MMC001-2018-3-28.flv&quot;" target="_blank" rel="noopener">www.testmmc.top:9000/vod/MMC001-2018-3-28.flv&quot;</a>,  点播地址<br>        “video_type”: “rtmp/flv”</p>
+<pre><code>}
+</code></pre><hr>
+<p>####5.4 查查询历史某一天的视频点播地址</p>
+<h2 id="方法名：getHistoryVideo"><a href="#方法名：getHistoryVideo" class="headerlink" title="######方法名：getHistoryVideo"></a>######方法名：getHistoryVideo</h2><h2 id="请求方式：GET-23"><a href="#请求方式：GET-23" class="headerlink" title="######请求方式：GET"></a>######请求方式：GET</h2><p>######请求参数<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|<br>|ground_serial|string|是||地面站序列号|MMC006|</p>
+<h2 id="date-string-是-日期-2018-04-10-1"><a href="#date-string-是-日期-2018-04-10-1" class="headerlink" title="|date|string|是||日期|2018-04-10|"></a>|date|string|是||日期|2018-04-10|</h2><p>######响应参数：json字符串，同getTodayVideo</p>
+<hr>
+<p>####5.5 查询某一架无人机录制的视频列表</p>
+<h2 id="方法名：getHistoryVideoList"><a href="#方法名：getHistoryVideoList" class="headerlink" title="######方法名：getHistoryVideoList"></a>######方法名：getHistoryVideoList</h2><h2 id="请求方式：GET-24"><a href="#请求方式：GET-24" class="headerlink" title="######请求方式：GET"></a>######请求方式：GET</h2><p>######请求参数<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|</p>
+<h2 id="ground-serial-string-是-地面站序列号-MMC006-6"><a href="#ground-serial-string-是-地面站序列号-MMC006-6" class="headerlink" title="|ground_serial|string|是||地面站序列号|MMC006|"></a>|ground_serial|string|是||地面站序列号|MMC006|</h2><p>######响应参数：json字符串<br>    [<br>        rtmp://<a href="http://www.testmmc.top:9000/vod/MMC001-2018-3-20.flv" target="_blank" rel="noopener">www.testmmc.top:9000/vod/MMC001-2018-3-20.flv</a>,<br>        rtmp://<a href="http://www.testmmc.top:9000/vod/MMC001-2018-3-21.flv" target="_blank" rel="noopener">www.testmmc.top:9000/vod/MMC001-2018-3-21.flv</a>,<br>        rtmp://<a href="http://www.testmmc.top:9000/vod/MMC001-2018-3-22.flv" target="_blank" rel="noopener">www.testmmc.top:9000/vod/MMC001-2018-3-22.flv</a><br>    ]</p>
+<hr>
+<p>####5.6 统计某一天，某一架无人机的最大数据</p>
+<h2 id="方法名：getBiggestData"><a href="#方法名：getBiggestData" class="headerlink" title="######方法名：getBiggestData"></a>######方法名：getBiggestData</h2><h2 id="请求方式：GET-25"><a href="#请求方式：GET-25" class="headerlink" title="######请求方式：GET"></a>######请求方式：GET</h2><p>######请求参数<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|<br>|ground_serial|string|是||地面站序列号|MMC006|</p>
+<h2 id="date-string-是-日期-2018-04-10-2"><a href="#date-string-是-日期-2018-04-10-2" class="headerlink" title="|date|string|是||日期|2018-04-10|"></a>|date|string|是||日期|2018-04-10|</h2><p>######响应参数：json字符串<br>    {<br>         “biggestSpeed”: 3,<br>         “biggestHeight”: 50,<br>         “biggestDistance”:8000,<br>         “biggestClimbRate”:3.5,<br>    }</p>
+<hr>
+<p>####5.7 导出某一天某一架无人机的数据</p>
+<h2 id="方法名：getCsvData"><a href="#方法名：getCsvData" class="headerlink" title="######方法名：getCsvData"></a>######方法名：getCsvData</h2><h2 id="请求方式：GET-26"><a href="#请求方式：GET-26" class="headerlink" title="######请求方式：GET"></a>######请求方式：GET</h2><p>######请求参数<br>|参数|类型|是否必填|最大长度|描述|示例值|<br>|:—:|:—:|:—:|<br>|ground_serial|string|是||地面站序列号|MMC006|</p>
+<h2 id="date-string-是-日期-2018-04-10-3"><a href="#date-string-是-日期-2018-04-10-3" class="headerlink" title="|date|string|是||日期|2018-04-10|"></a>|date|string|是||日期|2018-04-10|</h2><p>######响应参数：csv文件</p>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+			
+			
+		
+	
+		
+			
+			
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+	
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/2018/04/02/ShopApi/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  &copy; 2018 MMC
+  
+      with help from <a href="http://www.mmcuav.cn" target="_blank">MicroMultiCopter Aero Technology Co., Ltd</a> .    
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+
+</body>
+</html>
