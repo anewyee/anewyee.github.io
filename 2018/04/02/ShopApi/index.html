@@ -371,7 +371,7 @@
 <li>参数</li>
 </ul>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">goods_id</span><br><span class="line">goods_name</span><br><span class="line">goods_sn:可为空，系统自动生成SN</span><br><span class="line">cat_id          </span><br><span class="line">brand_id        </span><br><span class="line">shop_price</span><br><span class="line">market_price</span><br><span class="line"></span><br><span class="line">goods_img:保留，暂不提交</span><br><span class="line">goods_thumb:保留，暂不提交</span><br><span class="line"></span><br><span class="line">【新增】is_make_thumb :是否生成缩略图  0：手动提交缩略图  1：自动生成缩略图</span><br><span class="line"></span><br><span class="line">goods_desc</span><br><span class="line"></span><br><span class="line">goods_weight ：两位小数</span><br><span class="line">goods_number</span><br><span class="line">is_best      </span><br><span class="line">is_new       </span><br><span class="line">is_hot </span><br><span class="line">        </span><br><span class="line">is_on_sale</span><br><span class="line">keywords</span><br><span class="line">goods_brief</span><br><span class="line">seller_note</span><br><span class="line"></span><br><span class="line">goods_type</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">goods_id</span><br><span class="line">goods_name</span><br><span class="line">goods_sn:可为空，系统自动生成SN</span><br><span class="line">cat_id</span><br><span class="line">user_id  【新增】产品负责人          </span><br><span class="line">brand_id        </span><br><span class="line">shop_price</span><br><span class="line">market_price</span><br><span class="line"></span><br><span class="line">goods_img:保留，暂不提交</span><br><span class="line">goods_thumb:保留，暂不提交</span><br><span class="line"></span><br><span class="line">【新增】is_make_thumb :是否生成缩略图  0：手动提交缩略图  1：自动生成缩略图</span><br><span class="line"></span><br><span class="line">goods_desc</span><br><span class="line"></span><br><span class="line">goods_weight ：两位小数</span><br><span class="line">goods_number</span><br><span class="line">is_best      </span><br><span class="line">is_new       </span><br><span class="line">is_hot </span><br><span class="line">        </span><br><span class="line">is_on_sale</span><br><span class="line">keywords</span><br><span class="line">goods_brief</span><br><span class="line">seller_note</span><br><span class="line"></span><br><span class="line">goods_type</span><br></pre></td></tr></table></figure>
 <ul>
 <li>返回值</li>
 </ul>
@@ -399,6 +399,18 @@
 <li>返回值</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. 删除失败</span><br><span class="line">$status = 1</span><br><span class="line">$message = &apos;删除失败!&apos;;</span><br><span class="line"></span><br><span class="line">2. 商品分类删除成功</span><br><span class="line">$status = 0</span><br><span class="line">$message = &apos;商品删除成功&apos;;</span><br></pre></td></tr></table></figure>
+<h3 id="删除商品-1"><a href="#删除商品-1" class="headerlink" title="删除商品"></a>删除商品</h3><blockquote>
+<p>HOST:<em>URL</em>/admin/goods/dropGallery</p>
+<ul>
+<li>请求方式：POST</li>
+<li>参数</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">img_id  图片ID</span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. 删除失败</span><br><span class="line">$status = 1</span><br><span class="line">$message = &apos;删除失败!&apos;;</span><br><span class="line"></span><br><span class="line">2. 删除成功</span><br><span class="line">$status = 0</span><br><span class="line">$message = &apos;商品删除成功&apos;;</span><br></pre></td></tr></table></figure>
 <h3 id="商品列表"><a href="#商品列表" class="headerlink" title="商品列表"></a>商品列表</h3><p>权限：goods_manage</p>
 <blockquote>
 <p>HOST：<em>URL</em>/admin/goods/listGoods</p>
@@ -411,7 +423,7 @@
 <ul>
 <li>返回值</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">参数说明：</span><br><span class="line">goods_id,编号</span><br><span class="line">goods_name,商品名称</span><br><span class="line">goods_sn,货号</span><br><span class="line">shop_price,价格</span><br><span class="line">is_on_sale,上架</span><br><span class="line">is_best,精品</span><br><span class="line">is_new,新品</span><br><span class="line">is_hot,热销</span><br><span class="line">sort_order,推荐排序</span><br><span class="line">goods_number库存</span><br><span class="line"></span><br><span class="line">return:</span><br><span class="line">[</span><br><span class="line">&#123;&quot;goods_id&quot;:&quot;1&quot;,&quot;goods_name&quot;:&quot;1550&quot;,&quot;goods_sn&quot;:&quot;20180313&quot;,&quot;shop_price&quot;:&quot;5000.00&quot;,&quot;is_on_sale&quot;:&quot;1&quot;,&quot;is_best&quot;:&quot;1&quot;,&quot;is_new&quot;:&quot;1&quot;,&quot;is_hot&quot;:&quot;1&quot;,&quot;sort_order&quot;:&quot;100&quot;,&quot;goods_number&quot;:&quot;10&quot;&#125;,</span><br><span class="line">&#123;&quot;goods_id&quot;:&quot;2&quot;,&quot;goods_name&quot;:&quot;1200&quot;,&quot;goods_sn&quot;:&quot;120001&quot;,&quot;shop_price&quot;:&quot;2000.00&quot;,&quot;is_on_sale&quot;:&quot;1&quot;,&quot;is_best&quot;:&quot;1&quot;,&quot;is_new&quot;:&quot;1&quot;,&quot;is_hot&quot;:&quot;1&quot;,&quot;sort_order&quot;:&quot;100&quot;,&quot;goods_number&quot;:&quot;10&quot;&#125;,</span><br><span class="line">&#123;&quot;goods_id&quot;:&quot;3&quot;,&quot;goods_name&quot;:&quot;T15&quot;,&quot;goods_sn&quot;:&quot;ECS000003&quot;,&quot;shop_price&quot;:&quot;0.00&quot;,&quot;is_on_sale&quot;:&quot;1&quot;,&quot;is_best&quot;:&quot;1&quot;,&quot;is_new&quot;:&quot;1&quot;,&quot;is_hot&quot;:&quot;1&quot;,&quot;sort_order&quot;:&quot;100&quot;,&quot;goods_number&quot;:&quot;10&quot;&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">参数说明：</span><br><span class="line">goods_id,编号</span><br><span class="line">goods_name,商品名称</span><br><span class="line">goods_sn,货号</span><br><span class="line">name_cn,产品负责人【新增】</span><br><span class="line">shop_price,价格</span><br><span class="line">is_on_sale,上架</span><br><span class="line">is_best,精品</span><br><span class="line">is_new,新品</span><br><span class="line">is_hot,热销</span><br><span class="line">sort_order,推荐排序</span><br><span class="line">goods_number库存</span><br><span class="line"></span><br><span class="line">return:</span><br><span class="line">[</span><br><span class="line">&#123;&quot;goods_id&quot;:&quot;1&quot;,&quot;goods_name&quot;:&quot;1550&quot;,&quot;goods_sn&quot;:&quot;20180313&quot;,&quot;shop_price&quot;:&quot;5000.00&quot;,&quot;is_on_sale&quot;:&quot;1&quot;,&quot;is_best&quot;:&quot;1&quot;,&quot;is_new&quot;:&quot;1&quot;,&quot;is_hot&quot;:&quot;1&quot;,&quot;sort_order&quot;:&quot;100&quot;,&quot;goods_number&quot;:&quot;10&quot;&#125;,</span><br><span class="line">&#123;&quot;goods_id&quot;:&quot;2&quot;,&quot;goods_name&quot;:&quot;1200&quot;,&quot;goods_sn&quot;:&quot;120001&quot;,&quot;shop_price&quot;:&quot;2000.00&quot;,&quot;is_on_sale&quot;:&quot;1&quot;,&quot;is_best&quot;:&quot;1&quot;,&quot;is_new&quot;:&quot;1&quot;,&quot;is_hot&quot;:&quot;1&quot;,&quot;sort_order&quot;:&quot;100&quot;,&quot;goods_number&quot;:&quot;10&quot;&#125;,</span><br><span class="line">&#123;&quot;goods_id&quot;:&quot;3&quot;,&quot;goods_name&quot;:&quot;T15&quot;,&quot;goods_sn&quot;:&quot;ECS000003&quot;,&quot;shop_price&quot;:&quot;0.00&quot;,&quot;is_on_sale&quot;:&quot;1&quot;,&quot;is_best&quot;:&quot;1&quot;,&quot;is_new&quot;:&quot;1&quot;,&quot;is_hot&quot;:&quot;1&quot;,&quot;sort_order&quot;:&quot;100&quot;,&quot;goods_number&quot;:&quot;10&quot;&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 <p>注：删除虚拟销量virtual_sales标签；</p>
 <h3 id="商品名称在线修改"><a href="#商品名称在线修改" class="headerlink" title="商品名称在线修改"></a>商品名称在线修改</h3><p>权限：goods_manage</p>
 <blockquote>
@@ -633,6 +645,18 @@
 <li>@return  JSON [{value},{text},{data}]</li>
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        "value": "2",</span><br><span class="line">        "text": "MC6-1200 -- [50000.00]",</span><br><span class="line">        "data": ""</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h3 id="批量上传图片"><a href="#批量上传图片" class="headerlink" title="批量上传图片"></a>批量上传图片</h3><blockquote>
+<p>HOST：<em>URL</em>/admin/goods/uploadMassGallery</p>
+<ul>
+<li>请求方式：POST</li>
+<li>参数</li>
+</ul>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* @param   int     goods_id       商品ID</span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回值</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void</span><br></pre></td></tr></table></figure>
 <h3 id="商品审批操作日志表及状态显示"><a href="#商品审批操作日志表及状态显示" class="headerlink" title="商品审批操作日志表及状态显示"></a>商品审批操作日志表及状态显示</h3><p>数据表：mmc_approve_action </p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">action_id       mediumint 流水号</span><br><span class="line">goods_id        mediumint 被操作的商品ID</span><br><span class="line">action_user     varchar   操作该次的人员</span><br><span class="line">test_status     tinyint   测试状态。0，未确认；1，已确认；</span><br><span class="line">finance_status  tinyint   财务状态。0，未定价；1，已定价；</span><br><span class="line">lab_status      tinyint   实验室审批状态。0，未审批; 1，已审批;</span><br><span class="line">goods_status    tinyint   商品状态。0，未上架；1，已上架；2，预研项目；3，取消（红色）；4，已提交；</span><br><span class="line">action_note     varchar   操作备注</span><br><span class="line">log_time        int       操作时间</span><br></pre></td></tr></table></figure>
 <h2 id="商品数据管理"><a href="#商品数据管理" class="headerlink" title="商品数据管理"></a>商品数据管理</h2><p>主要数据表介绍：</p>
@@ -731,7 +755,7 @@
 <li>返回值</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat_id</span><br><span class="line">cat_name</span><br></pre></td></tr></table></figure>
-<h3 id="商品属性菜单"><a href="#商品属性菜单" class="headerlink" title="商品属性菜单"></a>商品属性菜单</h3><blockquote>
+<h3 id="商品参数属性菜单"><a href="#商品参数属性菜单" class="headerlink" title="商品参数属性菜单"></a>商品参数属性菜单</h3><blockquote>
 <p>HOST：<em>URL</em>/admin/goodstype/menuAttribute</p>
 <ul>
 <li>请求方式：POST</li>
@@ -743,12 +767,145 @@
 <li>返回值</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;attr_id&quot;: &quot;1&quot;,</span><br><span class="line">&quot;attr_name&quot;: &quot;最大起飞重量&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><ul>
+<li>权限角色管理在表 mmc_role，主要以部门划分，每个部门划分权限。</li>
+<li>mmc_admin_user 管理员用户列表</li>
+</ul>
+<h3 id="产品负责人列表"><a href="#产品负责人列表" class="headerlink" title="产品负责人列表"></a>产品负责人列表</h3><blockquote>
+<p>HOST：<em>URL</em>/admin/user/goodsOwnList</p>
+<ul>
+<li>请求方式：POST</li>
+<li>参数</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void</span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;user_id&quot;: &quot;2&quot;,</span><br><span class="line">        &quot;name_cn&quot;: &quot;基础用户&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;user_id&quot;: &quot;3&quot;,</span><br><span class="line">        &quot;name_cn&quot;: &quot;基础用户&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;user_id&quot;: &quot;8&quot;,</span><br><span class="line">        &quot;name_cn&quot;: &quot;000&quot;</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h3 id="管理员用户列表"><a href="#管理员用户列表" class="headerlink" title="管理员用户列表"></a>管理员用户列表</h3><blockquote>
+<p>HOST：<em>URL</em>/admin/user/getAdminUserList</p>
+</blockquote>
+<ul>
+<li>请求方式：POST</li>
+<li>参数</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void</span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">user_id, </span><br><span class="line">user_name, 登录名</span><br><span class="line">name_cn,用户名</span><br><span class="line">email, </span><br><span class="line">add_time, </span><br><span class="line">last_login</span><br></pre></td></tr></table></figure>
+<h3 id="删除管理员"><a href="#删除管理员" class="headerlink" title="删除管理员"></a>删除管理员</h3><blockquote>
+<p>HOST：<em>URL</em>/admin/user/dropAdminUser</p>
+<ul>
+<li>请求方式：POST</li>
+<li>参数</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">id : 管理员id</span><br><span class="line">session_id: 当前session_id</span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">status  0，成功</span><br><span class="line">        1. 登录失败</span><br></pre></td></tr></table></figure>
+<h3 id="编辑管理员"><a href="#编辑管理员" class="headerlink" title="编辑管理员"></a>编辑管理员</h3><blockquote>
+<p>HOST：<em>URL</em>/admin/user/editAdminUser</p>
+<ul>
+<li>请求方式：POST</li>
+<li>参数</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id : 管理员id</span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">user_id, </span><br><span class="line">user_name, </span><br><span class="line">name_cn , </span><br><span class="line">email, </span><br><span class="line">role_id</span><br></pre></td></tr></table></figure>
+<h3 id="添加管理员用户"><a href="#添加管理员用户" class="headerlink" title="添加管理员用户"></a>添加管理员用户</h3><blockquote>
+<p>HOST：<em>URL</em>/admin/user/addAdminUser</p>
+<ul>
+<li>请求方式：POST</li>
+<li>参数</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">* @param   string user_name         用户名</span><br><span class="line">* @param   string name_cn           中文名</span><br><span class="line">* @param   string email</span><br><span class="line">* @param   string password          密码</span><br><span class="line">* @param   string pwd_confirm       确认密码</span><br><span class="line">* @param   ing    select_role       选择角色id</span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">status  0，成功</span><br><span class="line">        1. 登录失败</span><br></pre></td></tr></table></figure>
+<h3 id="编辑更新管理员"><a href="#编辑更新管理员" class="headerlink" title="编辑更新管理员"></a>编辑更新管理员</h3><p>注：新增中文名表单，name_cn。</p>
+<blockquote>
+<p>HOST：<em>URL</em>/admin/user/updateAdminUser</p>
+<ul>
+<li>请求方式：POST</li>
+<li>参数</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">* @param   int    id                图片ID</span><br><span class="line">* @param   string user_name         用户名</span><br><span class="line">* @param   string name_cn           中文名</span><br><span class="line">* @param   string email</span><br><span class="line">* @param   string old_password      旧密码</span><br><span class="line">* @param   string new_password      新密码</span><br><span class="line">* @param   string pwd_confirm       确认密码</span><br><span class="line">* @param   ing    select_role       选择角色id</span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">status  0，成功</span><br><span class="line">        1. 登录失败</span><br></pre></td></tr></table></figure>
+<h3 id="管理员角色管理列表"><a href="#管理员角色管理列表" class="headerlink" title="管理员角色管理列表"></a>管理员角色管理列表</h3><blockquote>
+<p>HOST：<em>URL</em>/admin/user/getRoleList</p>
+<ul>
+<li>请求方式：POST</li>
+<li>参数</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void</span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">role_id, </span><br><span class="line">role_name, </span><br><span class="line">action_list, </span><br><span class="line">role_describe</span><br></pre></td></tr></table></figure>
+<h3 id="获取管理员角色名称列表菜单"><a href="#获取管理员角色名称列表菜单" class="headerlink" title="获取管理员角色名称列表菜单"></a>获取管理员角色名称列表菜单</h3><p>管理员角色菜单列表，第一个默认：</p>
+<p>role_id=0<br>role_name = 请选择</p>
+<blockquote>
+<p>HOST：<em>URL</em>/admin/user/roleMenu</p>
+<ul>
+<li>请求方式：POST</li>
+<li>参数</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void</span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;role_id&quot;: &quot;1&quot;,</span><br><span class="line">        &quot;role_name&quot;: &quot;商品添加权限&quot;</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h3 id="添加角色按钮"><a href="#添加角色按钮" class="headerlink" title="添加角色按钮"></a>添加角色按钮</h3><h3 id="删除角色确定按钮"><a href="#删除角色确定按钮" class="headerlink" title="删除角色确定按钮"></a>删除角色确定按钮</h3><h3 id="编辑角色按钮"><a href="#编辑角色按钮" class="headerlink" title="编辑角色按钮"></a>编辑角色按钮</h3><p>获取角色的基本信息</p>
+<h3 id="更新角色确定按钮"><a href="#更新角色确定按钮" class="headerlink" title="更新角色确定按钮"></a>更新角色确定按钮</h3><p>提交更新角色</p>
+<h2 id="管理员日志"><a href="#管理员日志" class="headerlink" title="管理员日志"></a>管理员日志</h2><h3 id="获取IP列表"><a href="#获取IP列表" class="headerlink" title="获取IP列表"></a>获取IP列表</h3><blockquote>
+<p>HOST：<em>URL</em>/admin/log/getIpList</p>
+<ul>
+<li>请求方式：POST</li>
+<li>参数</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void</span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;ip_address&quot;: &quot;127.0.0.1&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;ip_address&quot;: &quot;192.168.4.203&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;ip_address&quot;: &quot;192.168.4.241&quot;</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h3 id="获取日志列表"><a href="#获取日志列表" class="headerlink" title="获取日志列表"></a>获取日志列表</h3><p>支持分页。</p>
+<blockquote>
+<p>HOST：<em>URL</em>/admin/log/getIpList</p>
+<ul>
+<li>请求方式：POST</li>
+<li>参数</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">* @param   id         用户ID</span><br><span class="line">* @param   ip         用户IP</span><br><span class="line">* @param   sort_by    排序方式      不赋值默认al.log_id；  sort_by = al.log_time 或者 al.user_id</span><br><span class="line">* @param   sort_order 顺序还是倒序   不赋值默认倒序排列；    sort_order = 1 时为顺序</span><br><span class="line">* @param   page_size  分页大小</span><br><span class="line">* @param   page       第几页</span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回值</li>
+</ul>
+<ul>
+<li>@return  array<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    "list": [</span><br><span class="line">        &#123;</span><br><span class="line">            "log_time": "2018-04-20 15:09:34",</span><br><span class="line">            "log_id": "100",</span><br><span class="line">            "user_id": "1",</span><br><span class="line">            "log_info": "删除权限管理: 123",</span><br><span class="line">            "ip_address": "127.0.0.1",</span><br><span class="line">            "user_name": "admin"</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            "log_time": "2018-04-20 14:34:36",</span><br><span class="line">            "log_id": "99",</span><br><span class="line">            "user_id": "1",</span><br><span class="line">            "log_info": "编辑权限管理: mmc",</span><br><span class="line">            "ip_address": "127.0.0.1",</span><br><span class="line">            "user_name": "admin"</span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    "filter": &#123;</span><br><span class="line">        "sort_by": "al.log_id",</span><br><span class="line">        "sort_order": "DESC",</span><br><span class="line">        "record_count": "100",</span><br><span class="line">        "page_size": 2,</span><br><span class="line">        "page": 1,</span><br><span class="line">        "page_count": 50,</span><br><span class="line">        "start": 0</span><br><span class="line">    &#125;,</span><br><span class="line">    "page_count": 50,</span><br><span class="line">    "record_count": "100"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <h2 id="HTML功能"><a href="#HTML功能" class="headerlink" title="HTML功能"></a>HTML功能</h2><h3 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"http://www.store.com/home/Tools/upload"</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">enctype</span>=<span class="string">"multipart/form-data"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"image"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"上传"</span> <span class="attr">id</span>=<span class="string">"button"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="pdf预览"><a href="#pdf预览" class="headerlink" title="pdf预览"></a>pdf预览</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;object classid=&quot;clsid:CA8A9780-280D-11CF-A24D-444553540000&quot; width=&quot;500&quot; height=&quot;1000&quot; border=&quot;0&quot;&gt;</span><br><span class="line">&lt;param name=&quot;_Version&quot; value=&quot;65539&quot;&gt;</span><br><span class="line">&lt;param name=&quot;_ExtentX&quot; value=&quot;20108&quot;&gt;</span><br><span class="line">&lt;param name=&quot;_ExtentY&quot; value=&quot;10866&quot;&gt;</span><br><span class="line">&lt;param name=&quot;_StockProps&quot; value=&quot;0&quot;&gt;</span><br><span class="line">&lt;param name=&quot;SRC&quot; value=&quot;http://47.104.31.20/mmcdms/MMCDMSystemInstructionsV1.1.pdf&quot;&gt;</span><br><span class="line">&lt;object data=&quot;http://47.104.31.20/mmcdms/MMCDMSystemInstructionsV1.1.pdf&quot; type=&quot;application/pdf&quot; width=&quot;1000&quot; height=&quot;1200&quot;&gt;</span><br><span class="line">&lt;/object&gt;</span><br><span class="line">&lt;/object&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="错误返回"><a href="#错误返回" class="headerlink" title="错误返回"></a>错误返回</h2><p>返回例子：</p>
 <p>{status: int;  message:”string” }</p>
 <p>|名称|类型|</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">status: int 消息ID</span><br><span class="line">    0：默认值  表示正常消息</span><br><span class="line">    210：</span><br><span class="line">    404：不存在</span><br><span class="line"></span><br><span class="line">    500：数据库操作消息</span><br><span class="line">    501：数据重复</span><br><span class="line">    777：权限操作错误</span><br><span class="line"></span><br><span class="line">message: string 消息描述</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">status: int 消息ID</span><br><span class="line">    0：默认值  表示正常消息</span><br><span class="line">    210：</span><br><span class="line">    404：不存在</span><br><span class="line"></span><br><span class="line">    500：数据库操作消息</span><br><span class="line">    501：数据重复</span><br><span class="line">    777：权限操作错误</span><br><span class="line">    </span><br><span class="line">    400:session_id 失效</span><br><span class="line"></span><br><span class="line">message: string 消息描述</span><br></pre></td></tr></table></figure>
 <p>[TOC]</p>
 <h1 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h1><h2 id="文件获取路径"><a href="#文件获取路径" class="headerlink" title="文件获取路径"></a>文件获取路径</h2><blockquote>
 <p><em>URL</em> = <a href="http://192.168.4.222/mmcshop/Uploads/" target="_blank" rel="noopener">http://192.168.4.222/mmcshop/Uploads/</a><br>相对路径：20180408/01.jpg<br>绝对路径：<a href="http://192.168.4.222/mmcshop/Uploads/20180408/01.jpg" target="_blank" rel="noopener">http://192.168.4.222/mmcshop/Uploads/20180408/01.jpg</a></p>
@@ -827,7 +984,12 @@
 <ul>
 <li>返回值</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>	  
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="更新内容"><a href="#更新内容" class="headerlink" title="更新内容"></a>更新内容</h1><h2 id="20180420"><a href="#20180420" class="headerlink" title="20180420"></a>20180420</h2><ul>
+<li style="list-style: none"><input type="checkbox" checked> listGoods接口 增加 name_cn 产品负责人。</li>
+<li style="list-style: none"><input type="checkbox" checked> </li>
+</ul>
+	  
 
 	  <div>
   		<center>
