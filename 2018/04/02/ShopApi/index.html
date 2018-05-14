@@ -1062,7 +1062,19 @@
 <li>返回值</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">goods_id</span><br><span class="line">goods_name</span><br><span class="line">shop_price</span><br><span class="line">goods_thumb</span><br><span class="line">goods_brief</span><br></pre></td></tr></table></figure>
-<h2 id="单产品页面信息"><a href="#单产品页面信息" class="headerlink" title="单产品页面信息"></a>单产品页面信息</h2><h3 id="选择产品单页信息"><a href="#选择产品单页信息" class="headerlink" title="选择产品单页信息"></a>选择产品单页信息</h3><blockquote>
+<h2 id="单产品页面信息"><a href="#单产品页面信息" class="headerlink" title="单产品页面信息"></a>单产品页面信息</h2><h3 id="获取分类名字"><a href="#获取分类名字" class="headerlink" title="获取分类名字"></a>获取分类名字</h3><blockquote>
+<p>HOST：<em>URL</em>/home/goods/getCatName</p>
+<ul>
+<li>请求方式：POST</li>
+<li>参数</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat_id</span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回值</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    "cat_name": "挂载"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="选择产品单页信息"><a href="#选择产品单页信息" class="headerlink" title="选择产品单页信息"></a>选择产品单页信息</h3><blockquote>
 <p>HOST：<em>URL</em>/home/goods/selectGoodsPage</p>
 <ul>
 <li>请求方式：POST</li>
@@ -1108,6 +1120,8 @@
 </ul>
 <h2 id="20180427"><a href="#20180427" class="headerlink" title="20180427"></a>20180427</h2><ul>
 <li style="list-style: none"><input type="checkbox" checked> 新增商品预售在线修改：<em>URL</em>/admin/goods/isPresaleStatusChange</li>
+<li style="list-style: none"><input type="checkbox" checked> 新增比较两个商品是否可以进行对比：HOST：<em>URL</em>/home/goods/checkIfCompare</li>
+<li style="list-style: none"><input type="checkbox" checked> 新增开始进行产品对比： HOST：<em>URL</em>/home/goods/beginCompare</li>
 </ul>
 	  
 
