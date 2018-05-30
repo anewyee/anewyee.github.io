@@ -1,0 +1,262 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Marker Service API | MMC Helper</title>
+  <meta name="author" content="MMC">
+  
+  <meta name="description" content="MicroMultiCopter Aero Technology Co., Ltd">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Marker Service API"/>
+  <meta property="og:site_name" content="MMC Helper"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="MMC Helper" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">MMC Helper</a><span class="split"></span><span class="title">Marker Service API</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2018-05-18</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  <div class="col-xs-12 col-sm-3 col-md-3 toc"> 
+	<!-- toc -->
+<script type="text/javascript">
+		jQuery(document).ready(function() {
+ 		   generateWikiTOC('.note', '.toc',  2 , 2 );
+		});
+</script>
+  </div><!-- col-md-3 -->
+  
+  
+
+  
+  <div class="col-xs-12 col-sm-9 col-md-9 note">
+	
+
+	  <!-- content -->
+	  <h1 id="常用地址访问"><a href="#常用地址访问" class="headerlink" title="常用地址访问"></a>常用地址访问</h1><blockquote>
+<p>localhost 访问：<em>URL</em> = <a href="http://marker.server.com" target="_blank" rel="noopener">http://marker.server.com</a><br>用户       访问：<em>URL</em> = <a href="http://192.168.4.222" target="_blank" rel="noopener">http://192.168.4.222</a></p>
+</blockquote>
+<h2 id="标记功能"><a href="#标记功能" class="headerlink" title="标记功能"></a>标记功能</h2><h3 id="添加标记"><a href="#添加标记" class="headerlink" title="添加标记"></a>添加标记</h3><blockquote>
+<p><a href="http://192.168.4.222/tpmarker/home/marker/setMarker" target="_blank" rel="noopener">访问地址</a><br>HOST:<em>URL</em>/tpmarker/home/marker/setMarker</p>
+</blockquote>
+<ul>
+<li>请求方式：POST </li>
+<li>参数：Json</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">* @param   string    title           标记标题</span><br><span class="line">* @param   string    detail          详情</span><br><span class="line">* @param   string    markerType      类型             默认为1 普通标记 type:1  num:0  动画导航标记 type:0 num:1-n</span><br><span class="line">* @param   string    img_server_url  图片服务器相对路径</span><br><span class="line">* @param   string    lng</span><br><span class="line">* @param   string    lat</span><br><span class="line">* @param   string    alt</span><br><span class="line">* @param   string    heading</span><br><span class="line">* @param   string    tilt            pitch</span><br><span class="line">* @param   string    roll</span><br><span class="line">* @param   int       camType         标记点类型         默认值为1 1=点，0=巡航线区间，2=巡航线终点</span><br><span class="line">*</span><br><span class="line">* @return  string    attr_value</span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">添加成功：</span><br><span class="line">&#123;</span><br><span class="line">    status  = 1，</span><br><span class="line">    message = 添加标签成功！</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">添加失败：</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    status  = 0，</span><br><span class="line">    message = getError()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="上传图片到服务器"><a href="#上传图片到服务器" class="headerlink" title="上传图片到服务器"></a>上传图片到服务器</h3><p>返回图片在服务器的地址</p>
+<blockquote>
+<p><a href="http://192.168.4.222/tpmarker/home/marker/getLoadFile" target="_blank" rel="noopener">访问地址</a><br>HOST:<em>URL</em>/tpmarker/home/marker/getLoadFile</p>
+</blockquote>
+<ul>
+<li>请求方式：POST </li>
+<li>参数：Json</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* @param   文件参数    upfile</span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    imgUrl = &quot;&quot;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="获取标注的类型列表"><a href="#获取标注的类型列表" class="headerlink" title="获取标注的类型列表"></a>获取标注的类型列表</h3><p>标注的类型，下拉菜单应用</p>
+<blockquote>
+<p><a href="http://192.168.4.222/tpmarker/home/marker/getCategory" target="_blank" rel="noopener">访问地址</a><br>HOST:<em>URL</em>/tpmarker/home/marker/getCategory</p>
+</blockquote>
+<ul>
+<li><p>请求方式：get </p>
+</li>
+<li><p>参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>返回值</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;cat_id&quot;: &quot;1&quot;,</span><br><span class="line">    &quot;cat_name&quot;: &quot;默认&quot;,</span><br><span class="line">    &quot;cat_url&quot;: &quot;项目数据\\shp\\IMG_POI\\默认.png&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;cat_id&quot;: &quot;2&quot;,</span><br><span class="line">    &quot;cat_name&quot;: &quot;排污&quot;,</span><br><span class="line">    &quot;cat_url&quot;: &quot;项目数据\\shp\\IMG_POI\\排污.png&quot;</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h3 id="获取标注列表"><a href="#获取标注列表" class="headerlink" title="获取标注列表"></a>获取标注列表</h3><blockquote>
+<p><a href="http://192.168.4.222/tpmarker/home/marker/getMarkerList" target="_blank" rel="noopener">访问地址</a><br>HOST:<em>URL</em>/tpmarker/home/marker/setMarker</p>
+</blockquote>
+<ul>
+<li><p>请求方式：Get</p>
+</li>
+<li><p>参数：Json</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void</span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;marker_id&quot;: &quot;1&quot;,</span><br><span class="line">    &quot;img_url&quot;: &quot;http://192.168.4.222/TPMarkerResources/t&quot;,</span><br><span class="line">    &quot;title&quot;: &quot;test&quot;,</span><br><span class="line">    &quot;detail&quot;: &quot;t&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;marker_id&quot;: &quot;2&quot;,</span><br><span class="line">    &quot;img_url&quot;: &quot;http://192.168.4.222/TPMarkerResources/asdf&quot;,</span><br><span class="line">    &quot;title&quot;: &quot;testzzz&quot;,</span><br><span class="line">    &quot;detail&quot;: &quot;xx&quot;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h3 id="获取标注详情"><a href="#获取标注详情" class="headerlink" title="获取标注详情"></a>获取标注详情</h3><blockquote>
+<p><a href="http://192.168.4.222/tpmarker/home/marker/clickMarker?type=1&amp;marker_id=7" target="_blank" rel="noopener">访问地址</a><br>HOST:<em>URL</em>/tpmarker/home/marker/setMarker</p>
+</blockquote>
+<ul>
+<li>请求方式：POST/Get </li>
+<li>参数：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">* @param   int      type        普通标记 type:1  直接跳转到camera  动画导航标记 type:0 num:1-n</span><br><span class="line">* @param   int      marker_id   标记的ID号</span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;lng&quot;: &quot;120.9498299&quot;,</span><br><span class="line">    &quot;lat&quot;: &quot;30.88299698&quot;,</span><br><span class="line">    &quot;alt&quot;: &quot;50.22&quot;,</span><br><span class="line">    &quot;heading&quot;: &quot;0&quot;,</span><br><span class="line">    &quot;pitch&quot;: &quot;0&quot;,</span><br><span class="line">    &quot;roll&quot;: &quot;0&quot;</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>————————————-以下未启用————————————————</p>
+<h2 id="动画导航返回值"><a href="#动画导航返回值" class="headerlink" title="动画导航返回值"></a>动画导航返回值</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"X"</span>: <span class="string">""</span>,</span><br><span class="line">        <span class="string">"Y"</span>: <span class="string">""</span>,</span><br><span class="line">        <span class="string">"Z"</span>: <span class="string">""</span>,</span><br><span class="line">        <span class="string">"Heading"</span>: <span class="string">""</span>,</span><br><span class="line">        <span class="string">"Pitch"</span>: <span class="string">""</span>,</span><br><span class="line">        <span class="string">"Roll"</span>: <span class="string">""</span>,</span><br><span class="line">        <span class="string">"FlyMode"</span>: </span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"X"</span>: <span class="string">""</span>,</span><br><span class="line">        <span class="string">"Y"</span>: <span class="string">""</span>,</span><br><span class="line">        <span class="string">"Z"</span>: <span class="string">""</span>,</span><br><span class="line">        <span class="string">"Heading"</span>: <span class="string">""</span>,</span><br><span class="line">        <span class="string">"Pitch"</span>: <span class="string">""</span>,</span><br><span class="line">        <span class="string">"Roll"</span>: <span class="string">""</span>,</span><br><span class="line">        <span class="string">"FlyMode"</span>: </span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"X"</span>: <span class="string">""</span>,</span><br><span class="line">        <span class="string">"Y"</span>: <span class="string">""</span>,</span><br><span class="line">        <span class="string">"Z"</span>: <span class="string">""</span>,</span><br><span class="line">        <span class="string">"Heading"</span>: <span class="string">""</span>,</span><br><span class="line">        <span class="string">"Pitch"</span>: <span class="string">""</span>,</span><br><span class="line">        <span class="string">"Roll"</span>: <span class="string">""</span>,</span><br><span class="line">        <span class="string">"FlyMode"</span>: </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>标记上传：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h3><blockquote>
+<p><a href="http://192.168.4.222/tpmarker/home/marker/setMarker" target="_blank" rel="noopener">访问地址</a><br>HOST:<em>URL</em>/tpmarker/home/marker/setMarker</p>
+</blockquote>
+<ul>
+<li>请求方式：POST </li>
+<li>参数：Json</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="更新内容"><a href="#更新内容" class="headerlink" title="更新内容"></a>更新内容</h1><h2 id="20180518"><a href="#20180518" class="headerlink" title="20180518"></a>20180518</h2><ul>
+<li style="list-style: none"><input type="checkbox" checked> 。</li>
+</ul>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+			
+			
+		
+	
+		
+	
+		
+			
+			
+			
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+	
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/2018/04/19/uav/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  &copy; 2018 MMC
+  
+      with help from <a href="http://www.mmcuav.cn" target="_blank">MicroMultiCopter Aero Technology Co., Ltd</a> .    
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+
+</body>
+</html>
