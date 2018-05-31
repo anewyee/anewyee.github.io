@@ -82,6 +82,18 @@
 <li>返回值</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">添加成功：</span><br><span class="line">&#123;</span><br><span class="line">    status  = 1，</span><br><span class="line">    message = 添加标签成功！,</span><br><span class="line">    marker_id = x</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">添加失败：</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    status  = 0，</span><br><span class="line">    message = getError()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="删除标注"><a href="#删除标注" class="headerlink" title="删除标注"></a>删除标注</h3><blockquote>
+<p><a href="http://192.168.4.222/tpmarker/home/marker/dropMarker?marker_id=" target="_blank" rel="noopener">访问地址</a><br>HOST:<em>URL</em>/tpmarker/home/marker/dropMarker</p>
+</blockquote>
+<ul>
+<li>请求方式：POST </li>
+<li>参数：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">marker_id</span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">添加成功：</span><br><span class="line">&#123;</span><br><span class="line">    status  = 1，</span><br><span class="line">    message = 删除标注成功！,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">添加失败：</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    status  = 0，</span><br><span class="line">    message = getError()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="上传图片到服务器"><a href="#上传图片到服务器" class="headerlink" title="上传图片到服务器"></a>上传图片到服务器</h3><p>返回图片在服务器的地址</p>
 <blockquote>
 <p><a href="http://192.168.4.222/tpmarker/home/marker/getLoadFile" target="_blank" rel="noopener">访问地址</a><br>HOST:<em>URL</em>/tpmarker/home/marker/getLoadFile</p>
