@@ -184,13 +184,13 @@
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"img_host"</span>: <span class="string">"http://marker.server.com/resource"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="Marker标签管理"><a href="#Marker标签管理" class="headerlink" title="Marker标签管理"></a>Marker标签管理</h2><p>Marker标签管理主要管理标注的所属标签。</p>
 <h3 id="添加标签"><a href="#添加标签" class="headerlink" title="添加标签"></a>添加标签</h3><blockquote>
-<p><a href="http://gis.138.com/api/marker/addtag?marker_id=&amp;tag_id=" target="_blank" rel="noopener">访问地址：http://gis.138.com/api/marker/addtag?marker_id=&amp;tag_id=</a><br>HOST:<em>URL</em>/api/marker/addtag</p>
+<p><a href="http://gis.138.com/api/marker/addtag" target="_blank" rel="noopener">访问地址：http://gis.138.com/api/marker/addtag</a><br>HOST:<em>URL</em>/api/marker/addtag</p>
 </blockquote>
 <ul>
-<li>请求方式：get </li>
+<li>请求方式：post </li>
 <li>参数</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">* @param   int marker_id  标注ID  无ID时为0</span><br><span class="line">* @param   int tag_id     标签ID</span><br><span class="line">*</span><br><span class="line">* @return  string  status 状态</span><br><span class="line">* @return  string  data   数据</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&quot;marker_id&quot;:5,</span><br><span class="line">	&quot;tags&quot;:[4,2,3,5]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>返回值</li>
 </ul>
